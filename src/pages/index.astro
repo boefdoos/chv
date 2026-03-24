@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Home" description="Je ademt, maar het voelt niet goed. Wetenschappelijk onderbouwde informatie over chronische hyperventilatie.">
+
+  <!-- Hero -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 md:pt-[72px] pb-16 relative">
+    <div class="max-w-[640px]">
+      <h1 class="font-serif text-hero font-light text-sand-700 mb-6">
+        Je ademt, maar het voelt <em class="italic font-normal">niet goed</em>
+      </h1>
+      <p class="text-[17px] leading-[1.8] text-sand-600 mb-3">
+        Je zucht diep maar de opluchting komt niet. Je gaapt de hele dag maar je bent niet moe. Je voelt dat je niet genoeg lucht krijgt, terwijl er niets mis is met je longen.
+      </p>
+      <p class="text-[17px] leading-[1.8] text-sand-600">
+        Misschien heb je al tientallen onderzoeken gehad. Alles normaal. En toch klopt er iets niet.
+      </p>
+      <p class="font-serif text-[18px] text-sand-700 mt-6">
+        Dat klopt. En je bent niet gek.
+      </p>
+    </div>
+
+    <!-- Floating shapes -->
+    <div class="hidden lg:block absolute right-12 top-20 w-[340px] h-[340px] opacity-70">
+      <div class="absolute w-[280px] h-[280px] rounded-full border border-sand-300 top-[30px] right-0 animate-drift"></div>
+      <div class="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-sage-50 top-0 right-[100px] animate-drift [animation-direction:reverse]"></div>
+      <div class="absolute w-[100px] h-[100px] rounded-full bg-sage-50 top-[140px] right-[40px] animate-breathe"></div>
+    </div>
+  </section>
+
+  <!-- Herkenning -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-12 pb-16">
+    <h2 class="font-serif text-h2 font-light mb-9 reveal">Herken je dit?</h2>
+    <div class="grid md:grid-cols-2 gap-3 reveal reveal-delay-1">
+      {[
+        'Je moet om de paar minuten diep zuchten of gapen, maar het helpt niet',
+        'Je voelt je kortademig in rust, terwijl je zuurstofgehalte normaal is',
+        'Je hebt het gevoel dat je adem "niet aankomt"',
+        'Artsen zeggen dat er niets aan de hand is',
+        'De klachten zijn er de hele dag, maar verdwijnen als je slaapt',
+        'Eten maakt het erger',
+        'Als je ergens helemaal in opgaat, merk je het even niet',
+        'Je hebt maag-, vermoeidheids- of concentratieklachten waar geen verklaring voor is',
+      ].map(item => (
+        <div class="flex items-baseline gap-3 px-5 py-4 rounded-[10px] bg-sand-50 border border-transparent hover:border-sand-300 transition-colors">
+          <span class="w-1.5 h-1.5 min-w-[6px] rounded-full bg-sage-300 opacity-50 mt-2"></span>
+          <p class="text-[15px] leading-relaxed text-sand-600">{item}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-8 text-body text-sand-600 max-w-[560px] reveal reveal-delay-2">
+      Als je meerdere van deze punten herkent, lees dan verder. <strong class="text-sand-700 font-medium">Er is een verklaring, en er is iets aan te doen.</strong>
+    </p>
+  </section>
+
+  <!-- Uitleg -->
+  <section class="bg-sand-200 py-16 px-6 md:px-12 relative overflow-hidden">
+    <div class="absolute -top-[60px] -right-[100px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(74,124,111,0.1)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-[640px] mx-auto relative">
+      <h2 class="font-serif text-h2 font-light mb-6 reveal">Wat is er aan de hand?</h2>
+      <p class="text-body text-sand-600 mb-4 reveal reveal-delay-1">
+        Dit heet <strong class="text-sand-700 font-medium">chronische hyperventilatie</strong>. Niet de acute aanval die je misschien kent, met snelle ademhaling en tintelende handen. Dit is subtieler en hardnekkiger.
+      </p>
+      <p class="text-body text-sand-600 mb-4 reveal reveal-delay-1">
+        Bij chronische hyperventilatie adem je de hele dag net iets te veel. Niet zichtbaar, niet dramatisch, maar genoeg om koolstofdioxide (CO2) in je bloed te laag te houden. Dat verstoort tientallen processen in je lichaam, van je spijsvertering tot je concentratie.
+      </p>
+      <p class="text-body text-sand-600 reveal reveal-delay-2">
+        Standaard medisch onderzoek vindt niets. Je longen werken, je hart klopt, je bloed is "normaal." Maar de fijnafstemming van je ademhaling is uit balans. En dat veroorzaakt echte, meetbare klachten.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-7 reveal reveal-delay-3">
+        <a href="/wat-is-het/ademhaling" class="inline-flex items-center gap-1.5 px-5 py-2.5 border border-sand-300 rounded-full text-sm text-sand-600 no-underline bg-sand-50 hover:border-sage-300 hover:text-sage-300 transition-all">
+          Hoe ademhaling werkt
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/wat-is-het/wat-gaat-er-mis" class="inline-flex items-center gap-1.5 px-5 py-2.5 border border-sand-300 rounded-full text-sm text-sand-600 no-underline bg-sand-50 hover:border-sage-300 hover:text-sage-300 transition-all">
+          Wat gaat er mis bij CHV?
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goed nieuws -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-12 py-16">
+    <div class="max-w-[720px] mx-auto grid grid-cols-[4px_1fr] gap-8 reveal">
+      <div class="bg-gradient-to-b from-sage-300 to-sage-50 rounded-sm"></div>
+      <div>
+        <h2 class="font-serif text-[24px] font-normal mb-3">Het goede nieuws</h2>
+        <p class="text-body text-sand-600 mb-6">
+          Chronische hyperventilatie is geen zeldzame of gevaarlijke aandoening. Het is een verstoring van een automatisch systeem die met de juiste aanpak verbeterd kan worden. Maar het begint bij begrip.
+        </p>
+        <a href="/behandeling" class="inline-flex items-center gap-2 px-7 py-3 bg-sage-300 text-white text-sm font-medium rounded-lg no-underline hover:bg-sage-400 transition-colors">
+          Bekijk de behandelopties
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Over + lagen -->
+  <section class="border-t border-sand-300 py-16 px-6 md:px-12">
+    <div class="max-w-[640px] mx-auto">
+      <h2 class="font-serif text-[24px] font-light mb-4 reveal">Waarom deze site?</h2>
+      <p class="text-[15px] leading-[1.8] text-sand-600 mb-3 reveal reveal-delay-1">
+        Er is geen Belgische organisatie voor chronische hyperventilatie. Betrouwbare, Nederlandstalige informatie is nauwelijks te vinden. Deze site brengt wetenschappelijk onderbouwde informatie samen, geschreven zodat iedereen het kan begrijpen.
+      </p>
+      <p class="text-[15px] leading-[1.8] text-sand-600 mb-7 reveal reveal-delay-1">
+        Elke pagina is opgebouwd in drie lagen:
+      </p>
+      <div class="grid md:grid-cols-3 gap-3 reveal reveal-delay-2">
+        <div class="p-5 rounded-xl bg-sage-50">
+          <div class="text-[11px] font-medium uppercase tracking-wider text-sage-400 mb-2">Herkennen</div>
+          <p class="text-[13px] leading-snug text-sand-600">Twee zinnen die iedereen begrijpt</p>
+        </div>
+        <div class="p-5 rounded-xl bg-terra-50">
+          <div class="text-[11px] font-medium uppercase tracking-wider text-terra-400 mb-2">Begrijpen</div>
+          <p class="text-[13px] leading-snug text-sand-600">Het mechanisme in heldere taal</p>
+        </div>
+        <div class="p-5 rounded-xl bg-plum-50">
+          <div class="text-[11px] font-medium uppercase tracking-wider text-plum-400 mb-2">Verdiepen</div>
+          <p class="text-[13px] leading-snug text-sand-600">Papers en bronnen met directe links</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
