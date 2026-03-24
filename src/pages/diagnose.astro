@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+import StoryTimeline from '../components/StoryTimeline.astro';
+---
+
+<Base title="Diagnose" activeNav="wat-is-het">
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4 text-[13px] text-sand-500">
+    <a href="/" class="no-underline text-sand-500 hover:text-sage-300">Home</a>
+    <span class="mx-2 opacity-40">/</span>
+    <a href="/wat-is-het/wat-gaat-er-mis" class="no-underline text-sand-500 hover:text-sage-300">Wat gaat er mis?</a>
+    <span class="mx-2 opacity-40">/</span>
+    Diagnose
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-10 pb-5">
+    <h1 class="font-serif text-hero font-light max-w-[640px]">Diagnose: waarom het zo lang duurt</h1>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4">
+    <StoryTimeline current="diagnose" />
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-8 pb-20">
+    <div class="max-w-[720px] mx-auto">
+
+      <!-- HERKENNEN -->
+      <div id="herkennen" class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
+        <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
+        <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
+          Mensen met chronische hyperventilatie wachten gemiddeld jaren op de juiste diagnose. Niet omdat de aandoening zeldzaam is, maar omdat de klachten op tientallen andere dingen lijken en de standaard onderzoeken niets opleveren.
+        </p>
+      </div>
+
+      <!-- BEGRIJPEN -->
+      <div id="begrijpen">
+
+        <!-- Het typische pad -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Het typische pad</h2>
+          <p class="text-body text-sand-600 mb-4">
+            De meeste mensen met chronische hyperventilatie komen bij de huisarts met klachten die niet direct naar ademhaling wijzen: hartkloppingen, duizeligheid, vermoeidheid, maagproblemen, concentratieproblemen. De huisarts doet bloedonderzoek. Normaal. Verwijst door naar een specialist.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            De cardioloog doet een ECG en soms een echocardiogram. Normaal. De longarts doet spirometrie. Normaal. De gastro-enteroloog doet een gastroscopie. Normaal. De neuroloog, de internist, de KNO-arts: alles normaal.
+          </p>
+          <p class="text-body text-sand-600">
+            Na maanden of jaren van onderzoeken zonder resultaat krijgen veel mensen te horen dat het "tussen de oren" zit. Dat is begrijpelijk vanuit het perspectief van de arts: elk orgaan dat onderzocht is, werkt prima. Maar het is niet het hele verhaal.
+          </p>
+
+          <!-- Diagnostische odyssee visual -->
+          <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mt-8 reveal reveal-delay-1">
+            <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-5">Het diagnostisch pad</div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0">Huisarts</div>
+                <div class="flex-1 h-[36px] rounded-lg bg-sand-200 flex items-center px-4">
+                  <span class="text-[13px] text-sand-600">Bloedonderzoek, urinetest</span>
+                </div>
+                <span class="text-[12px] text-sage-400 font-medium shrink-0">Normaal</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0">Cardioloog</div>
+                <div class="flex-1 h-[36px] rounded-lg bg-sand-200 flex items-center px-4">
+                  <span class="text-[13px] text-sand-600">ECG, echocardiogram</span>
+                </div>
+                <span class="text-[12px] text-sage-400 font-medium shrink-0">Normaal</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0">Longarts</div>
+                <div class="flex-1 h-[36px] rounded-lg bg-sand-200 flex items-center px-4">
+                  <span class="text-[13px] text-sand-600">Spirometrie, longfunctie</span>
+                </div>
+                <span class="text-[12px] text-sage-400 font-medium shrink-0">Normaal</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0">Maag-darm</div>
+                <div class="flex-1 h-[36px] rounded-lg bg-sand-200 flex items-center px-4">
+                  <span class="text-[13px] text-sand-600">Gastroscopie, bloedtest</span>
+                </div>
+                <span class="text-[12px] text-sage-400 font-medium shrink-0">Normaal</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0">Neuroloog</div>
+                <div class="flex-1 h-[36px] rounded-lg bg-sand-200 flex items-center px-4">
+                  <span class="text-[13px] text-sand-600">Neurologisch onderzoek</span>
+                </div>
+                <span class="text-[12px] text-sage-400 font-medium shrink-0">Normaal</span>
+              </div>
+              <div class="flex items-center gap-4 mt-2 pt-3 border-t border-sand-300">
+                <div class="w-24 text-[13px] text-sand-500 text-right shrink-0"></div>
+                <div class="flex-1">
+                  <span class="text-[14px] text-sand-600 italic">"We kunnen niets vinden. Het is waarschijnlijk stress."</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Waarom standaard onderzoek faalt -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Waarom standaard onderzoek niets vindt</h2>
+          <p class="text-body text-sand-600 mb-4">
+            De reden is niet dat artsen incompetent zijn. Het probleem is dat de standaard onderzoeken niet meten wat er mis is. Spirometrie meet of je longen goed werken (ja). Een ECG meet of je hart goed klopt (ja). Bloedonderzoek kijkt naar een lange lijst waarden, maar standaard zit daar geen arterieel CO2 bij.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            Chronische hyperventilatie is geen probleem van een orgaan dat niet werkt. Het is een probleem van een <strong class="text-sand-700 font-medium">regelsysteem</strong> dat verkeerd is afgesteld. De onderdelen werken allemaal, maar de afstemming klopt niet. En die afstemming wordt niet gemeten door standaard onderzoeken.
+          </p>
+          <p class="text-body text-sand-600">
+            Daar komt bij dat chronische hyperventilatie subtiel is. Je ademt niet hijgend of duidelijk te snel. Het verschil met normaal ademen is misschien twee of drie ademhalingen per minuut, of iets diepere teugen dan nodig. Dat valt niemand op in een consult.
+          </p>
+        </div>
+
+        <!-- Wat kan het wel aantonen -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Wat kan het wel aantonen?</h2>
+          <p class="text-body text-sand-600 mb-6">
+            Er zijn tests die chronische hyperventilatie kunnen opsporen. Het probleem is dat ze zelden worden aangevraagd als niemand eraan denkt.
+          </p>
+
+          <div class="space-y-4 reveal reveal-delay-1">
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Capnografie</div>
+                  <p class="text-[14px] text-sand-600 leading-relaxed">Meet het CO2-gehalte in je uitgeademde lucht (ETCO2). De meest directe manier om te zien of je structureel te weinig CO2 hebt. Normaal is 35-45 mmHg. Bij chronische hyperventilatie vaak onder de 32.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Meest specifiek</span>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Arterieel bloedgas</div>
+                  <p class="text-[14px] text-sand-600 leading-relaxed">Bloedafname uit een slagader die het CO2-niveau, de zuurgraad (pH), en het bicarbonaatgehalte direct meet. Kan onderscheid maken tussen acute en chronische hyperventilatie. Wordt zelden aangevraagd buiten de spoedeisende hulp.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Meest compleet</span>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Nijmegen-vragenlijst</div>
+                  <p class="text-[14px] text-sand-600 leading-relaxed">Een vragenlijst met 16 items over klachten die bij hyperventilatie passen. Scoort je hoger dan 23, dan is hyperventilatie waarschijnlijk. Het is een screening, geen diagnose: de lijst is gevoelig maar niet specifiek.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Screening</span>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Saturatie als aanwijzing</div>
+                  <p class="text-[14px] text-sand-600 leading-relaxed">Een saturatie (SpO2) van 99-100% wordt normaal gesproken als goed nieuws gezien. Maar het is ook een subtiele aanwijzing: bij normaal ademen is de saturatie 95-98%. Een consistent hoge saturatie kan wijzen op overademen.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Indirect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wat je zelf kunt doen -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Wat kun je zelf doen?</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Als je jezelf herkent in de klachten op deze site, is het redelijk om dit met je huisarts te bespreken. Je kunt concreet vragen:
+          </p>
+          <div class="space-y-2 mb-6 reveal reveal-delay-1">
+            <div class="flex items-baseline gap-3 px-5 py-3 rounded-[10px] bg-sand-50 border border-sand-300">
+              <span class="w-1.5 h-1.5 min-w-[6px] rounded-full bg-sage-300 opacity-50 mt-2"></span>
+              <p class="text-[15px] text-sand-600">"Kan er een capnografiemeting gedaan worden om te kijken of mijn CO2 te laag is?"</p>
+            </div>
+            <div class="flex items-baseline gap-3 px-5 py-3 rounded-[10px] bg-sand-50 border border-sand-300">
+              <span class="w-1.5 h-1.5 min-w-[6px] rounded-full bg-sage-300 opacity-50 mt-2"></span>
+              <p class="text-[15px] text-sand-600">"Ik heb een constant gevoel van luchthonger met normale saturatie. Kan hyperventilatie een rol spelen?"</p>
+            </div>
+            <div class="flex items-baseline gap-3 px-5 py-3 rounded-[10px] bg-sand-50 border border-sand-300">
+              <span class="w-1.5 h-1.5 min-w-[6px] rounded-full bg-sage-300 opacity-50 mt-2"></span>
+              <p class="text-[15px] text-sand-600">"Kan ik een verwijzing krijgen naar een ademhalingstherapeut of kinesiotherapeut met ervaring in ademhalingsretraining?"</p>
+            </div>
+          </div>
+          <p class="text-body text-sand-600">
+            Het helpt om concreet te zijn. "Ik denk dat ik chronisch hyperventileer" is een sterkere opening dan "ik voel me niet lekker." Niet elke huisarts is vertrouwd met chronische hyperventilatie als zelfstandig probleem, maar een gerichte vraag opent het gesprek.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VERDIEPEN -->
+      <div id="verdiepen" class="mt-14 pt-10 border-t border-sand-300 reveal">
+        <h2 class="font-serif text-[22px] font-normal mb-6">Bronnen en verder lezen</h2>
+        <ul class="list-none">
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Gardner WN (1996)</div>
+              <div class="text-[14px] text-sand-600 italic">The pathophysiology of hyperventilation disorders</div>
+              <div class="text-[13px] text-sand-500">Chest, 109(2), 516-34</div>
+              <a href="https://doi.org/10.1378/chest.109.2.516" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1378/chest.109.2.516 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">van Dixhoorn J, Duivenvoorden HJ (1985)</div>
+              <div class="text-[14px] text-sand-600 italic">Efficacy of Nijmegen Questionnaire in recognition of the hyperventilation syndrome</div>
+              <div class="text-[13px] text-sand-500">Journal of Psychosomatic Research, 29(2), 199-206</div>
+              <a href="https://doi.org/10.1016/0022-3999(85)90042-X" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1016/0022-3999(85)90042-X &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Norweg A, Oh C, DiMango A, et al. (2025)</div>
+              <div class="text-[14px] text-sand-600 italic">Mind the Breath: Feasibility of capnography-assisted learned monitored (CALM) breathing for dyspnea treatment</div>
+              <div class="text-[13px] text-sand-500">Journal of Cardiopulmonary Rehabilitation and Prevention, 45(2), 118-131</div>
+              <a href="https://doi.org/10.1097/HCR.0000000000000879" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1097/HCR.0000000000000879 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next page -->
+      <a href="/behandeling" class="mt-12 block bg-sand-200 rounded-2xl p-8 md:p-10 flex items-center justify-between no-underline text-sand-700 transition-all hover:-translate-y-0.5 hover:shadow-lg reveal">
+        <div>
+          <div class="text-[12px] text-sand-500 uppercase tracking-wider mb-1">Volgende pagina</div>
+          <div class="font-serif text-[20px] font-normal">Behandelopties</div>
+        </div>
+        <div class="w-10 h-10 min-w-[40px] rounded-full bg-sage-50 flex items-center justify-center">
+          <svg class="w-4 h-4 text-sage-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</Base>
+
+<script>
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
