@@ -1,0 +1,75 @@
+---
+interface Props {
+  current: string;
+}
+
+const { current } = Astro.props;
+
+const pages = [
+  { slug: 'ademhaling', label: 'Hoe ademhaling werkt', href: '/wat-is-het/ademhaling' },
+  { slug: 'wat-gaat-er-mis', label: 'Wat gaat er mis?', href: '/wat-is-het/wat-gaat-er-mis' },
+  { slug: 'gevolgen', label: 'Gevolgen', href: '/gevolgen' },
+  { slug: 'diagnose', label: 'Diagnose', href: '/diagnose' },
+  { slug: 'behandeling', label: 'Behandeling', href: '/behandeling' },
+  { slug: 'leven-met-chv', label: 'Leven met CHV', href: '/leven-met-chv' },
+];
+
+const currentIndex = pages.findIndex(p => p.slug === current);
+---
+
+<div class="max-w-[720px] mx-auto mb-10">
+  <div class="flex items-center gap-0 overflow-x-auto py-2 scrollbar-hide">
+    {pages.map((page, i) => {
+      const isActive = page.slug === current;
+      const isPast = i < currentIndex;
+      const isFuture = i > currentIndex;
+
+      return (
+        <div class="flex items-center shrink-0">
+          {/* Node */}
+          <a
+            href={isPast || isActive ? page.href : undefined}
+            class:list={[
+              "flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] transition-all no-underline whitespace-nowrap",
+              isActive && "bg-sage-300 text-white font-medium",
+              isPast && "bg-sage-50 text-sage-400 hover:bg-sage-100 cursor-pointer",
+              isFuture && "bg-sand-200 text-sand-400 cursor-default",
+            ]}
+          >
+            <span class:list={[
+              "w-[18px] h-[18px] rounded-full flex items-center justify-center text-[10px] font-medium shrink-0",
+              isActive && "bg-white/20 text-white",
+              isPast && "bg-sage-200 text-sage-400",
+              isFuture && "bg-sand-300 text-sand-400",
+            ]}>
+              {isPast ? (
+                <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              ) : (
+                i + 1
+              )}
+            </span>
+            <span class="hidden md:inline">{page.label}</span>
+          </a>
+
+          {/* Connector line */}
+          {i < pages.length - 1 && (
+            <div class:list={[
+              "w-4 md:w-6 h-[1.5px] shrink-0",
+              i < currentIndex ? "bg-sage-200" : "bg-sand-300",
+            ]} />
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>

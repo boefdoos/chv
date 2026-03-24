@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import StoryTimeline from '../../components/StoryTimeline.astro';
 import BreathingCycle from '../../components/BreathingCycle.tsx';
 import CO2Bar from '../../components/CO2Bar.tsx';
 ---
@@ -16,12 +17,8 @@ import CO2Bar from '../../components/CO2Bar.tsx';
     <h1 class="font-serif text-hero font-light max-w-[600px]">Hoe werkt je ademhaling?</h1>
   </div>
 
-  <div class="max-w-[1200px] mx-auto px-6 md:px-12 sticky top-0 z-10 bg-sand-100 py-4">
-    <div class="flex gap-1 bg-sand-200 rounded-[10px] p-1 max-w-[420px]" id="layer-tabs">
-      <button class="layer-tab active flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="herkennen">Herkennen</button>
-      <button class="layer-tab flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="begrijpen">Begrijpen</button>
-      <button class="layer-tab flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="verdiepen">Verdiepen</button>
-    </div>
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4">
+    <StoryTimeline current="ademhaling" />
   </div>
 
   <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-8 pb-20">
@@ -136,35 +133,7 @@ import CO2Bar from '../../components/CO2Bar.tsx';
 
 </Base>
 
-<style>
-  .layer-tab { background: transparent; color: #84807A; }
-  .layer-tab.active { background: #FDFCFA; color: #302E28; font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .layer-tab:hover:not(.active) { color: #5A5750; }
-</style>
-
 <script>
-  document.querySelectorAll('.layer-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.getAttribute('data-target');
-      if (target) document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        document.querySelectorAll('.layer-tab').forEach(t => t.classList.remove('active'));
-        document.querySelector(`.layer-tab[data-target="${id}"]`)?.classList.add('active');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  ['herkennen', 'begrijpen', 'verdiepen'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
-  });
-
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.15 });
