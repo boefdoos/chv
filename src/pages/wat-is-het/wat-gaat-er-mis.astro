@@ -1,0 +1,284 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Wat gaat er mis?" activeNav="wat-is-het">
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4 text-[13px] text-sand-500">
+    <a href="/" class="no-underline text-sand-500 hover:text-sage-300">Home</a>
+    <span class="mx-2 opacity-40">/</span>
+    <a href="/wat-is-het/ademhaling" class="no-underline text-sand-500 hover:text-sage-300">Hoe werkt ademhaling?</a>
+    <span class="mx-2 opacity-40">/</span>
+    Wat gaat er mis?
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-10 pb-5">
+    <h1 class="font-serif text-hero font-light max-w-[640px]">Wat gaat er mis bij chronische hyperventilatie?</h1>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 sticky top-0 z-10 bg-sand-100 py-4">
+    <div class="flex gap-1 bg-sand-200 rounded-[10px] p-1 max-w-[420px]">
+      <button class="layer-tab active flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="herkennen">Herkennen</button>
+      <button class="layer-tab flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="begrijpen">Begrijpen</button>
+      <button class="layer-tab flex-1 py-2.5 px-4 rounded-lg text-[13px] text-center cursor-pointer border-none font-sans transition-all" data-target="verdiepen">Verdiepen</button>
+    </div>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-8 pb-20">
+    <div class="max-w-[720px] mx-auto">
+
+      <!-- HERKENNEN -->
+      <div id="herkennen" class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
+        <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
+        <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
+          Bij chronische hyperventilatie is de thermostaat in je hersenstam verkeerd afgesteld. Hij denkt dat er te veel CO2 in je bloed zit, terwijl er eigenlijk te weinig is. Daardoor blijf je te veel ademen, en komt je lichaam in een vicieuze cirkel terecht.
+        </p>
+      </div>
+
+      <!-- BEGRIJPEN -->
+      <div id="begrijpen">
+
+        <!-- Het verschoven setpoint -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">De thermostaat staat te laag</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Op de vorige pagina zag je dat chemoreceptoren in je hersenstam werken als een thermostaat. Ze meten CO2 en regelen je ademhaling. Die thermostaat heeft een instelpunt, het <strong class="text-sand-700 font-medium">setpoint</strong>.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            Bij chronische hyperventilatie is dat setpoint naar beneden verschoven. Je hersenstam beschouwt een te laag CO2-niveau als "normaal." Zodra het CO2 een beetje stijgt richting het echte normaal, slaat hij alarm: meer ademen! Terwijl er eigenlijk niets aan de hand is.
+          </p>
+          <p class="text-body text-sand-600">
+            Het resultaat: je blijft de hele dag net iets te veel ademen. Niet zichtbaar, niet dramatisch. Maar genoeg om je CO2 structureel te laag te houden.
+          </p>
+
+          <div class="bg-sand-200 rounded-xl p-6 mt-6 border-l-[3px] border-terra-300 reveal reveal-delay-1">
+            <p class="text-[15px] leading-[1.7] text-sand-600">
+              <strong class="text-sand-700 font-medium">Vergelijking:</strong> stel je voor dat je verwarmingsthermostaat op 14 graden staat terwijl 20 comfortabel zou zijn. De verwarming slaat af zodra het 14 graden wordt, en jij zit in de kou. Er is niets mis met de verwarming zelf, maar het instelpunt is verkeerd. Bij chronische hyperventilatie is het instelpunt van je CO2-thermostaat te laag: je lichaam "verwarmt" (ademt) te weinig om je CO2 op het juiste niveau te houden.
+            </p>
+          </div>
+        </div>
+
+        <!-- De vicieuze cirkel -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">De vicieuze cirkel</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Het probleem verergert zichzelf. Doordat je structureel te veel ademt, daalt je CO2. Je nieren passen zich aan door bicarbonaat uit te scheiden, een soort buffer. Na een paar uur tot dagen is die aanpassing compleet: je lichaam heeft zich ingesteld op het nieuwe, te lage niveau.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            Nu zit je vast. Je CO2 is te laag, maar je lichaam beschouwt dat als normaal. Elke poging om minder te ademen voelt als stikken, want je hersenstam denkt dat je CO2 te hoog wordt. Terwijl het in werkelijkheid eindelijk de goede kant opgaat.
+          </p>
+
+          <!-- Visual: vicious circle -->
+          <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mt-8 reveal reveal-delay-1">
+            <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-5">Het mechanisme</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex gap-3 items-start p-4 rounded-xl bg-red-50/50">
+                <div class="w-7 h-7 min-w-[28px] rounded-full bg-red-100 flex items-center justify-center text-[13px] font-medium text-red-700">1</div>
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Te veel ademen</div>
+                  <div class="text-[13px] text-sand-500 leading-snug">CO2 in het bloed daalt onder het normale niveau</div>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start p-4 rounded-xl bg-red-50/50">
+                <div class="w-7 h-7 min-w-[28px] rounded-full bg-red-100 flex items-center justify-center text-[13px] font-medium text-red-700">2</div>
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Nieren compenseren</div>
+                  <div class="text-[13px] text-sand-500 leading-snug">Bicarbonaat wordt uitgescheiden, het lichaam past zich aan het lage niveau aan</div>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start p-4 rounded-xl bg-red-50/50">
+                <div class="w-7 h-7 min-w-[28px] rounded-full bg-red-100 flex items-center justify-center text-[13px] font-medium text-red-700">3</div>
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Setpoint verschuift</div>
+                  <div class="text-[13px] text-sand-500 leading-snug">De hersenstam beschouwt het te lage CO2 als het nieuwe "normaal"</div>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start p-4 rounded-xl bg-red-50/50">
+                <div class="w-7 h-7 min-w-[28px] rounded-full bg-red-100 flex items-center justify-center text-[13px] font-medium text-red-700">4</div>
+                <div>
+                  <div class="text-[14px] font-medium text-sand-700 mb-1">Alarm bij normaal CO2</div>
+                  <div class="text-[13px] text-sand-500 leading-snug">Elke stijging richting echt normaal voelt als "te veel" en triggert meer ademen</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5">
+              <span class="inline-flex items-center gap-2 text-[13px] text-red-600 font-medium">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+                Cirkel herhaalt zichzelf
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- De paradox -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">De paradox: genoeg zuurstof, toch klachten</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Dit verklaart het meest frustrerende aspect van chronische hyperventilatie: al je medische onderzoeken zijn normaal. Je saturatie is goed (vaak zelfs 99-100%, wat juist een teken is van te veel ademen). Je longen werken. Je hart klopt prima.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            Maar het lage CO2 heeft gevolgen door het hele lichaam. Op de vorige pagina zag je dat CO2 de sleutel is die de laaddeuren van hemoglobine opent. Bij te weinig CO2 blijft de zuurstof vastzitten in het bloed. Daarnaast vernauwen je bloedvaten, worden je zenuwen prikkelbaar, en raakt je spijsvertering ontregeld.
+          </p>
+          <p class="text-body text-sand-600">
+            Het resultaat is een cascade van klachten die op het eerste gezicht niets met ademhaling te maken lijken te hebben.
+          </p>
+        </div>
+
+        <!-- De klachten -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Het klachtenweb</h2>
+          <p class="text-body text-sand-600 mb-6">
+            Laag CO2 verstoort meerdere systemen tegelijk. Daardoor krijgen veel mensen met chronische hyperventilatie een combinatie van schijnbaar ongerelateerde klachten.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-3 reveal reveal-delay-1">
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Hersenen en zenuwstelsel</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Duizeligheid, concentratieproblemen, wazig zien, onwerkelijk gevoel, tintelingen in handen en gezicht</p>
+              <div class="mt-3 text-[11px] text-sand-400">Door vernauwde bloedvaten en prikkelbare zenuwen</div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Hart en bloedsomloop</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Hartkloppingen, druk op de borst, snelle hartslag in rust</p>
+              <div class="mt-3 text-[11px] text-sand-400">Door sympathische overactivatie en vernauwde bloedvaten</div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Spijsvertering</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Opgeblazen gevoel, oprispingen, misselijkheid, reflux, prikkelbare darm</p>
+              <div class="mt-3 text-[11px] text-sand-400">Door veranderde spierspanning en zuurgraad</div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Spieren en energie</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Chronische vermoeidheid, spierpijn, stijfheid, zwaar gevoel in armen en benen</p>
+              <div class="mt-3 text-[11px] text-sand-400">Door verminderde zuurstofafgifte en spierspanning</div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Psychisch</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Angst, onrust, paniekgevoelens, prikkelbaarheid, slaapproblemen</p>
+              <div class="mt-3 text-[11px] text-sand-400">Deels direct gevolg van laag CO2, deels reactie op chronische klachten</div>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Ademhaling zelf</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Constant zuchten, dwangmatig gapen, gevoel niet genoeg lucht te krijgen, adem "komt niet aan"</p>
+              <div class="mt-3 text-[11px] text-sand-400">Directe uiting van de mismatch tussen ademdrang en CO2-niveau</div>
+            </div>
+          </div>
+
+          <p class="text-body text-sand-600 mt-6 reveal reveal-delay-2">
+            Herken je meerdere van deze categorieën? Dan ben je niet de enige. Veel mensen met chronische hyperventilatie worden jarenlang van specialist naar specialist gestuurd voordat iemand het verband ziet.
+          </p>
+        </div>
+
+        <!-- Waarom het zo moeilijk te vinden is -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Waarom artsen het missen</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Chronische hyperventilatie is niet zichtbaar. Je ademt niet hijgend of snakkend naar adem. Het verschil met normaal ademen is subtiel: misschien twee of drie ademhalingen per minuut te veel, of iets te diepe teugen. Dat valt niet op bij een consult van tien minuten.
+          </p>
+          <p class="text-body text-sand-600 mb-4">
+            Daarbij komt dat de klachten zo breed zijn dat ze in tientallen andere richtingen wijzen. Hartkloppingen leiden naar de cardioloog. Maagklachten naar de gastro-enteroloog. Vermoeidheid naar de internist. Iedereen onderzoekt zijn eigen domein, vindt niets, en verwijst door.
+          </p>
+          <p class="text-body text-sand-600">
+            De enige test die het direct kan aantonen is een meting van het CO2 in je uitgeademde lucht (capnografie) of in je bloed (arterieel bloedgas). Maar die tests worden zelden aangevraagd als niemand aan hyperventilatie denkt.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VERDIEPEN -->
+      <div id="verdiepen" class="mt-14 pt-10 border-t border-sand-300 reveal">
+        <h2 class="font-serif text-[22px] font-normal mb-6">Bronnen en verder lezen</h2>
+        <ul class="list-none">
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Jack S, Rossiter HB, Pearson MG, et al. (2004)</div>
+              <div class="text-[14px] text-sand-600 italic">Ventilatory responses to inhaled carbon dioxide, hypoxia, and exercise in idiopathic hyperventilation</div>
+              <div class="text-[13px] text-sand-500">American Journal of Respiratory and Critical Care Medicine, 170(2), 105-6</div>
+              <a href="https://doi.org/10.1164/rccm.200312-1693OC" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1164/rccm.200312-1693OC &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Gardner WN (1996)</div>
+              <div class="text-[14px] text-sand-600 italic">The pathophysiology of hyperventilation disorders</div>
+              <div class="text-[13px] text-sand-500">Chest, 109(2), 516-34</div>
+              <a href="https://doi.org/10.1378/chest.109.2.516" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1378/chest.109.2.516 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Smith CA, Blain GM, Henderson KS, Dempsey JA (2015)</div>
+              <div class="text-[14px] text-sand-600 italic">Peripheral chemoreceptors determine the respiratory sensitivity of central chemoreceptors to CO2</div>
+              <div class="text-[13px] text-sand-500">Journal of Physiology, 593(18), 4225-43</div>
+              <a href="https://doi.org/10.1113/JP270114" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1113/JP270114 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Banzett RB, Lansing RW, Binks AP (2021)</div>
+              <div class="text-[14px] text-sand-600 italic">Air hunger: a primal sensation and a primary element of dyspnea</div>
+              <div class="text-[13px] text-sand-500">Comprehensive Physiology, 11(2), 1449-1483</div>
+              <a href="https://doi.org/10.1002/cphy.c200001" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1002/cphy.c200001 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next page -->
+      <a href="/gevolgen" class="mt-12 block bg-sand-200 rounded-2xl p-8 md:p-10 flex items-center justify-between no-underline text-sand-700 transition-all hover:-translate-y-0.5 hover:shadow-lg reveal">
+        <div>
+          <div class="text-[12px] text-sand-500 uppercase tracking-wider mb-1">Volgende pagina</div>
+          <div class="font-serif text-[20px] font-normal">Diagnose: waarom het zo lang duurt</div>
+        </div>
+        <div class="w-10 h-10 min-w-[40px] rounded-full bg-sage-50 flex items-center justify-center">
+          <svg class="w-4 h-4 text-sage-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</Base>
+
+<style>
+  .layer-tab { background: transparent; color: #84807A; }
+  .layer-tab.active { background: #FDFCFA; color: #302E28; font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .layer-tab:hover:not(.active) { color: #5A5750; }
+</style>
+
+<script>
+  document.querySelectorAll('.layer-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-target');
+      if (target) document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        document.querySelectorAll('.layer-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector(`.layer-tab[data-target="${id}"]`)?.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  ['herkennen', 'begrijpen', 'verdiepen'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
