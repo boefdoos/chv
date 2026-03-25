@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 const steps = [
-  { label: 'Te veel ademen', sub: 'CO2 daalt', angle: -90 },
-  { label: 'Nieren passen aan', sub: 'Buffer verdwijnt', angle: 0 },
-  { label: 'Setpoint verschuift', sub: 'Laag wordt "normaal"', angle: 90 },
-  { label: 'Alarm bij stijging', sub: '"Meer ademen!"', angle: 180 },
+  { label: 'Te veel ademen', sub: 'CO₂ daalt' },
+  { label: 'Nieren passen aan', sub: 'Buffer verdwijnt' },
+  { label: 'Setpoint verschuift', sub: 'Laag wordt "normaal"' },
+  { label: 'Alarm bij stijging', sub: '"Meer ademen!"' },
 ];
 
 export default function ViciousCircle() {
-  const dotRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -17,18 +17,16 @@ export default function ViciousCircle() {
 
     let progress = 0;
     let animId: number;
+    const R = 120;
+    const CX = 200;
+    const CY = 190;
 
     const animate = () => {
-      progress += 0.15;
-      if (progress >= 360) progress = 0;
-      const r = 130;
-      const cx = 180;
-      const cy = 170;
+      progress += 0.12;
+      if (progress >= 360) progress -= 360;
       const rad = (progress - 90) * (Math.PI / 180);
-      const x = cx + r * Math.cos(rad);
-      const y = cy + r * Math.sin(rad);
-      dot.style.left = `${x}px`;
-      dot.style.top = `${y}px`;
+      dot.setAttribute('cx', String(CX + R * Math.cos(rad)));
+      dot.setAttribute('cy', String(CY + R * Math.sin(rad)));
       animId = requestAnimationFrame(animate);
     };
 
@@ -36,90 +34,136 @@ export default function ViciousCircle() {
     return () => cancelAnimationFrame(animId);
   }, []);
 
-  const cx = 180;
-  const cy = 170;
-  const r = 130;
+  // Center and radius of the circle
+  const CX = 200;
+  const CY = 190;
+  const R = 120;
 
-  const positions = steps.map((s) => {
-    const rad = s.angle * (Math.PI / 180);
-    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+  // Positions: top, right, bottom, left (clockwise)
+  const angles = [-90, 0, 90, 180];
+  const positions = angles.map((a) => {
+    const rad = a * (Math.PI / 180);
+    return { x: CX + R * Math.cos(rad), y: CY + R * Math.sin(rad) };
   });
 
-  // Arrow SVG path between two points along the circle arc
-  const arrowPaths = steps.map((_, i) => {
+  // Box dimensions
+  const BW = 130;
+  const BH = 52;
+
+  // Build arc paths between boxes
+  // Each arc goes from one box edge to the next, following the circle
+  const makeArc = (i: number) => {
     const from = positions[i];
     const to = positions[(i + 1) % 4];
-    const midAngle = ((steps[i].angle + steps[(i + 1) % 4].angle) / 2 + (i === 3 ? 180 : 0)) * (Math.PI / 180);
-    const bulge = i === 3 ? -30 : 30;
-    const mx = cx + (r + bulge) * Math.cos(midAngle);
-    const my = cy + (r + bulge) * Math.sin(midAngle);
+    const fromAngle = angles[i];
+    const toAngle = angles[(i + 1) % 4] + (i === 3 ? 360 : 0);
 
-    // Offset start/end to avoid overlapping boxes
-    const dx1 = to.x - from.x;
-    const dy1 = to.y - from.y;
-    const len = Math.sqrt(dx1 * dx1 + dy1 * dy1);
-    const ox = (dx1 / len) * 40;
-    const oy = (dy1 / len) * 40;
+    // Start/end offsets: move along the circle a bit past the box
+    const startDeg = fromAngle + 22;
+    const endDeg = toAngle - 22;
 
-    return `M${from.x + ox} ${from.y + oy} Q${mx} ${my} ${to.x - ox} ${to.y - oy}`;
-  });
+    const startRad = startDeg * (Math.PI / 180);
+    const endRad = endDeg * (Math.PI / 180);
+
+    const x1 = CX + R * Math.cos(startRad);
+    const y1 = CY + R * Math.sin(startRad);
+    const x2 = CX + R * Math.cos(endRad);
+    const y2 = CY + R * Math.sin(endRad);
+
+    // SVG arc: large arc if span > 180
+    const span = endDeg - startDeg;
+    const largeArc = span > 180 ? 1 : 0;
+
+    return `M${x1.toFixed(1)} ${y1.toFixed(1)} A${R} ${R} 0 ${largeArc} 1 ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+  };
 
   return (
-    <div className="relative" style={{ width: '360px', height: '340px', margin: '0 auto' }}>
-      {/* Arrow paths */}
-      <svg
-        viewBox="0 0 360 340"
-        width="360"
-        height="340"
-        style={{ position: 'absolute', top: 0, left: 0 }}
-      >
+    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+      <svg viewBox="0 0 400 380" width="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="vc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M2 1.5L7.5 5L2 8.5" fill="none" stroke="#C08B68" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          <marker
+            id="vc-arrow"
+            viewBox="0 0 10 10"
+            refX="8"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto"
+          >
+            <path
+              d="M2 2L8 5L2 8"
+              fill="none"
+              stroke="#b07858"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </marker>
         </defs>
-        {arrowPaths.map((d, i) => (
-          <path key={i} d={d} fill="none" stroke="#C08B68" strokeWidth="1.2" markerEnd="url(#vc-arrow)" />
-        ))}
-      </svg>
 
-      {/* Traveling dot */}
-      <div
-        ref={dotRef}
-        className="absolute w-2 h-2 rounded-full"
-        style={{
-          background: '#C08B68',
-          opacity: 0.6,
-          transform: 'translate(-4px, -4px)',
-          transition: 'none',
-        }}
-      />
-
-      {/* Step boxes */}
-      {steps.map((step, i) => {
-        const pos = positions[i];
-        return (
-          <div
+        {/* Arc arrows */}
+        {[0, 1, 2, 3].map((i) => (
+          <path
             key={i}
-            className="absolute flex flex-col items-center text-center"
-            style={{
-              left: `${pos.x}px`,
-              top: `${pos.y}px`,
-              transform: 'translate(-50%, -50%)',
-              width: '120px',
-            }}
-          >
-            <div className="bg-[#fce8e2] border border-[#e8c0b0] rounded-xl px-3 py-2.5 w-full">
-              <div style={{ fontSize: '12px', fontWeight: 500, color: '#7a3a2a', lineHeight: 1.3 }}>
+            d={makeArc(i)}
+            fill="none"
+            stroke="#b07858"
+            strokeWidth="1.5"
+            markerEnd="url(#vc-arrow)"
+          />
+        ))}
+
+        {/* Traveling dot */}
+        <circle
+          ref={dotRef}
+          cx={CX}
+          cy={CY - R}
+          r="4"
+          fill="#b07858"
+          opacity="0.5"
+        />
+
+        {/* Step boxes */}
+        {steps.map((step, i) => {
+          const pos = positions[i];
+          const x = pos.x - BW / 2;
+          const y = pos.y - BH / 2;
+
+          return (
+            <g key={i}>
+              <rect
+                x={x}
+                y={y}
+                width={BW}
+                height={BH}
+                rx="10"
+                ry="10"
+                fill="#fce8e2"
+                stroke="#e8c0b0"
+                strokeWidth="1"
+              />
+              <text
+                x={pos.x}
+                y={pos.y - 6}
+                textAnchor="middle"
+                dominantBaseline="central"
+                style={{ fontSize: '12px', fontWeight: 600, fill: '#7a3a2a' }}
+              >
                 {step.label}
-              </div>
-              <div style={{ fontSize: '10px', color: '#a05a4a', marginTop: '2px', lineHeight: 1.3 }}>
+              </text>
+              <text
+                x={pos.x}
+                y={pos.y + 12}
+                textAnchor="middle"
+                dominantBaseline="central"
+                style={{ fontSize: '10px', fill: '#a05a4a' }}
+              >
                 {step.sub}
-              </div>
-            </div>
-          </div>
-        );
-      })}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
     </div>
   );
 }
