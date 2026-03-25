@@ -112,7 +112,7 @@ import SurveyBanner from '../components/SurveyBanner.astro';
 
       <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-6 reveal">
         <div class="flex items-start justify-between gap-4 mb-3">
-          <h3 class="font-serif text-[20px] font-normal">Klassieke medicatie</h3>
+          <h3 class="font-serif text-[20px] font-normal">Ondersteunende medicatie</h3>
           <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Beperkt bewijs</span>
         </div>
         <p class="text-[15px] text-sand-600 mb-4 leading-relaxed">
@@ -135,40 +135,7 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         <p class="text-[12px] text-sand-500">Voorschrijver: huisarts, psychiater.</p>
       </div>
 
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-6 reveal">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <h3 class="font-serif text-[20px] font-normal">Hersenstam-gerichte medicatie</h3>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
-        </div>
-        <p class="text-[15px] text-sand-600 mb-4 leading-relaxed">
-          Recente inzichten suggereren dat klassieke medicatie (SSRI's, benzodiazepines) de verkeerde receptoren in de hersenstam targeten. Bij CHV die vanuit de hersenstam wordt aangestuurd, zijn er middelen die specifieker ingrijpen op de ademregulatie. Geen van deze middelen is geregistreerd voor CHV — bespreek ze met een arts die openstaat voor off-label overwegingen.
-        </p>
-        <div class="grid md:grid-cols-2 gap-4 mb-3">
-          <div class="p-4 rounded-xl bg-white/60 border border-sand-200">
-            <div class="text-[13px] font-medium text-sand-700 mb-1">Alpha-2 agonisten (clonidine, guanfacine)</div>
-            <p class="text-[12px] text-sand-500 leading-relaxed">Dempen de sympathische overactivatie vanuit de locus coeruleus en verbreden de CO2-reserve. Clonidine verlaagde in een RCT de gevoeligheid voor hypocapnie. Guanfacine is beter verdraagbaar voor dagelijks gebruik en toonde duurzaam effect bij dysautonomie (tot 6 jaar). Bijwerkingen: slaperigheid, bloeddrukdaling.</p>
-          </div>
-          <div class="p-4 rounded-xl bg-white/60 border border-sand-200">
-            <div class="text-[13px] font-medium text-sand-700 mb-1">Low-dose naltrexone (LDN, 0.5-4.5mg)</div>
-            <p class="text-[12px] text-sand-500 leading-relaxed">Stimuleert via nachtelijke receptorblokkade de aanmaak van endogene opioden die luchthonger onderdrukken. Logica: als morfine luchthonger met ~60% vermindert, dan kan versterking van het eigen opioidsysteem een milder, veiliger effect hebben. Goedkoop, veilig, beschikbaar via magistraal recept.</p>
-          </div>
-          <div class="p-4 rounded-xl bg-white/60 border border-sand-200">
-            <div class="text-[13px] font-medium text-sand-700 mb-1">Zuranolone (neurosteroide)</div>
-            <p class="text-[12px] text-sand-500 leading-relaxed">Versterkt de "tonische remming" van ademhalingscentra via extrasynaptische GABA-A receptoren die benzodiazepines niet bereiken. Dit verklaart waarom benzodiazepines bij CHV vaak falen. FDA-goedgekeurd voor postpartumdepressie, 14-daagse kuur.</p>
-          </div>
-          <div class="p-4 rounded-xl bg-white/60 border border-sand-200">
-            <div class="text-[13px] font-medium text-sand-700 mb-1">Orexine-antagonisten (suvorexant, lemborexant)</div>
-            <p class="text-[12px] text-sand-500 leading-relaxed">Orexine-neuronen verbinden arousal met ademhaling en zijn zelf CO2-gevoelig. Blokkade zou de koppeling tussen waakzaamheid en ademdrang kunnen verbreken. Ademhalingsveilig. Nog niet getest voor CHV.</p>
-          </div>
-        </div>
-        <div class="bg-terra-50 rounded-lg p-3 border border-terra-100">
-          <p class="text-[12px] text-terra-400 leading-relaxed">
-            De combinatie van een alpha-2 agonist (sympathische overactivatie) + LDN (luchthongerperceptie) + eventueel zuranolone (tonische remming) richt zich op drie verschillende pathofysiologische lagen die geen van de klassieke middelen bereiken.
-          </p>
-        </div>
-      </div>
-
-      <!-- Levensstijl: full width -->
+<!-- Levensstijl: full width -->
       <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Levensstijl</h2>
 
       <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-12 reveal">
@@ -212,13 +179,27 @@ import SurveyBanner from '../components/SurveyBanner.astro';
 
         <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Neurosteroiden</h3>
+            <h3 class="font-serif text-[18px] font-normal text-plum-400">Verkennende medicatie</h3>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Stoffen als zuranolone werken op een ander type receptor in de hersenstam dan benzodiazepines. Ze versterken de "tonische remming" van ademhalingscentra, wat zou kunnen verklaren waarom benzodiazepines bij CHV vaak niet werken maar deze klasse mogelijk wel.
+          <p class="text-[14px] text-sand-600 leading-relaxed mb-3">
+            De gangbare medicatie bij CHV (SSRI's, benzodiazepines) is ontwikkeld voor angststoornissen, niet voor ademregulatie. Recente inzichten wijzen op middelen die specifieker ingrijpen op de hersenstam en het autonome zenuwstelsel. Geen van deze middelen is geregistreerd voor CHV.
           </p>
-          <p class="text-[12px] text-sand-500">Puur mechanistisch onderbouwd. Geen klinische trials voor CHV.</p>
+          <div class="space-y-1.5 mb-2">
+            <div class="pl-3 border-l-2 border-plum-100">
+              <div class="text-[12px] font-medium text-sand-700">Alpha-2 agonisten (clonidine, guanfacine)</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Dempen sympathische overactivatie en verbreden de CO2-reserve. Clonidine verlaagde in een RCT de gevoeligheid voor hypocapnie. Guanfacine is beter verdraagbaar voor dagelijks gebruik.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-plum-100">
+              <div class="text-[12px] font-medium text-sand-700">Low-dose naltrexone (LDN)</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Versterkt het eigen opioidsysteem dat luchthonger onderdrukt. Veilig, goedkoop, beschikbaar via magistraal recept.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-plum-100">
+              <div class="text-[12px] font-medium text-sand-700">Neurosteroiden (zuranolone)</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Versterken tonische remming in ademhalingscentra via receptoren die benzodiazepines niet bereiken. Kan verklaren waarom benzodiazepines bij CHV falen.</p>
+            </div>
+          </div>
+          <p class="text-[12px] text-sand-500">Mechanistisch onderbouwd. Geen klinische trials voor CHV. Bespreek met een arts die openstaat voor off-label overwegingen.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
@@ -262,8 +243,8 @@ import SurveyBanner from '../components/SurveyBanner.astro';
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">HRV-biofeedback</td><td class="py-3 pr-4"><span class="text-terra-400">Matig</span></td><td class="py-3">Autonome balans</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">Capnografie-gestuurd</td><td class="py-3 pr-4"><span class="text-plum-300">Opkomend</span></td><td class="py-3">CO2 real-time feedback</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">CGT</td><td class="py-3 pr-4"><span class="text-sage-400">Sterk</span></td><td class="py-3">Angst, gedachtenpatronen</td></tr>
-              <tr class="border-b border-sand-200"><td class="py-3 pr-4">Klassieke medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Beperkt</span></td><td class="py-3">Ondersteunend (angst, stemming)</td></tr>
-              <tr class="border-b border-sand-200"><td class="py-3 pr-4">Hersenstam-gerichte medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Sympathisch zenuwstelsel, ademdrang, tonische remming</td></tr>
+              <tr class="border-b border-sand-200"><td class="py-3 pr-4">Medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Beperkt</span></td><td class="py-3">Ondersteunend (angst, stemming)</td></tr>
+              <tr class="border-b border-sand-200"><td class="py-3 pr-4">Verkennende medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Ademregulatie, autonome balans</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">Vagus nerve stimulatie</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Parasympathisch zenuwstelsel</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">Deep brain stimulation</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Luchthongerperceptie</td></tr>
               <tr><td class="py-3 pr-4">Stellate ganglion blokkade</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Sympathische reset</td></tr>
