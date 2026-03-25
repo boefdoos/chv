@@ -1,0 +1,48 @@
+---
+interface Props {
+  variant?: 'default' | 'compact' | 'warm';
+  heading?: string;
+  text?: string;
+}
+
+const {
+  variant = 'default',
+  heading = 'Help mee met onderzoek',
+  text = 'We zijn bezig met een onderzoeksproject naar de verschillende patronen binnen chronische hyperventilatie. Jouw ervaring kan helpen om de behandeling voor iedereen te verbeteren.',
+} = Astro.props;
+
+const isCompact = variant === 'compact';
+const isWarm = variant === 'warm';
+---
+
+<div class:list={[
+  "rounded-2xl reveal",
+  isCompact ? "p-6" : "p-8",
+  isWarm ? "bg-terra-50 border border-terra-100" : "bg-sage-50 border border-sage-100",
+]}>
+  <h3 class:list={[
+    "font-serif font-normal mb-3",
+    isCompact ? "text-[20px]" : "text-h3",
+    isWarm ? "text-terra-400" : "text-sage-500",
+  ]}>
+    {heading}
+  </h3>
+  <p class:list={[
+    "text-sand-600 leading-relaxed",
+    isCompact ? "text-[14px] mb-4" : "text-body mb-5",
+  ]}>
+    {text}
+  </p>
+  <a
+    href="https://breathwise.be"
+    target="_blank"
+    class:list={[
+      "inline-flex items-center gap-2 text-sm font-medium rounded-lg no-underline transition-colors",
+      isCompact ? "px-5 py-2.5" : "px-7 py-3",
+      isWarm ? "bg-terra-300 text-white hover:bg-terra-400" : "bg-sage-300 text-white hover:bg-sage-400",
+    ]}
+  >
+    Vul de vragenlijst in (5 min)
+    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>

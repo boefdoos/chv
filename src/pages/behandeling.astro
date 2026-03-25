@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import SurveyBanner from '../components/SurveyBanner.astro';
 ---
 
 <Base title="Behandelopties" activeNav="behandeling">
@@ -233,20 +234,11 @@ import Base from '../layouts/Base.astro';
         </div>
 
         <!-- Help mee met onderzoek -->
-        <div class="mb-14 reveal">
-          <div class="bg-sage-50 rounded-2xl p-8 border border-sage-100">
-            <h2 class="font-serif text-h3 font-normal mb-4 text-sage-500">Help mee met onderzoek</h2>
-            <p class="text-body text-sand-600 mb-3">
-              Waarom werkt de ene aanpak voor de ene persoon wel en voor de andere niet? Dat weten we nog niet goed. Er is weinig onderzoek dat zich specifiek richt op de verschillende patronen binnen chronische hyperventilatie.
-            </p>
-            <p class="text-body text-sand-600 mb-5">
-              We zijn bezig met een onderzoeksproject dat probeert hier patronen in te vinden. Als je chronische hyperventilatie hebt (of denkt te hebben), kun je bijdragen door onze korte vragenlijst in te vullen. Het kost vijf minuten en helpt om de behandeling voor iedereen te verbeteren.
-            </p>
-            <a href="https://breathwise.be" target="_blank" class="inline-flex items-center gap-2 px-7 py-3 bg-sage-300 text-white text-sm font-medium rounded-lg no-underline hover:bg-sage-400 transition-colors">
-              Vul de vragenlijst in
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
+        <div class="mb-14">
+          <SurveyBanner
+            heading="Waarom werkt het niet voor iedereen?"
+            text="Dat weten we nog niet goed. We proberen patronen te vinden in hoe verschillende mensen chronische hyperventilatie ervaren. Jouw antwoorden helpen om de behandeling voor iedereen te verbeteren."
+          />
         </div>
 
       </div>
