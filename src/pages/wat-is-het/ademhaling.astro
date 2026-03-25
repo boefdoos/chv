@@ -28,7 +28,7 @@ import CO2Bar from '../../components/CO2Bar.tsx';
       <div id="herkennen" class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
         <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
         <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
-          Ademhaling is een automatisch systeem dat zelf regelt hoeveel je ademt. Het belangrijkste signaal is niet zuurstof, maar koolstofdioxide (CO2). Je hersenstam meet voortdurend hoeveel CO2 er in je bloed zit en past je ademhaling daarop aan, zoals een thermostaat de verwarming regelt.
+          Ademhaling is een automatisch systeem dat zelf regelt hoeveel je ademt. Het belangrijkste signaal is niet zuurstof, maar koolstofdioxide (CO2). Je hersenstam meet voortdurend hoeveel CO2 er in je bloed zit en past je ademhaling daarop aan.
         </p>
       </div>
 
@@ -62,16 +62,22 @@ import CO2Bar from '../../components/CO2Bar.tsx';
         </div>
 
         <div class="mb-14 reveal">
-          <h2 class="font-serif text-h3 font-normal mb-5">De thermostaat in je hersenstam</h2>
+          <h2 class="font-serif text-h3 font-normal mb-5">Het regelsysteem in je hersenstam</h2>
           <p class="text-body text-sand-600 mb-4">
-            Diep in je hersenen zit een groepje cellen dat constant meet hoeveel CO2 er in je bloed zit. Dit zijn de <strong class="text-sand-700 font-medium">chemoreceptoren</strong>. Ze werken als een thermostaat: als het CO2 boven een bepaald punt komt, geven ze het signaal om meer te ademen. Komt het eronder, dan adem je minder.
+            Diep in je hersenen zit een groepje cellen dat constant meet hoeveel CO2 er in je bloed zit. Dit zijn de <strong class="text-sand-700 font-medium">chemoreceptoren</strong>. Komt het CO2 boven een bepaald punt, dan geven ze het signaal om meer te ademen. Zakt het eronder, dan adem je minder. Dat punt heet het <strong class="text-sand-700 font-medium">setpoint</strong>.
           </p>
           <p class="text-body text-sand-600 mb-4">
-            Dit punt heet het <strong class="text-sand-700 font-medium">setpoint</strong>. Normaal gesproken is het precies goed afgesteld. Je ademt zonder erbij na te denken, en de hoeveelheid CO2 in je bloed blijft stabiel.
+            Normaal gesproken is dat setpoint precies goed afgesteld. Je ademt zonder erbij na te denken, en de hoeveelheid CO2 in je bloed blijft stabiel.
           </p>
-          <p class="text-body text-sand-600">
+          <p class="text-body text-sand-600 mb-4">
             Maar wat als dat setpoint verschuift? Daar gaat de volgende pagina over.
           </p>
+
+          <div class="bg-sand-200 rounded-xl p-6 mt-2 border-l-[3px] border-terra-300">
+            <p class="text-[15px] leading-[1.7] text-sand-600">
+              <strong class="text-sand-700 font-medium">Vergelijking:</strong> stel je CO2-niveau voor als het water in een emmer. Je lichaam vult de emmer (je cellen produceren CO2), en je ademhaling is het gat onderin (bij elke uitademing verlies je CO2). Normaal gesproken zijn de kraan en het gat in balans: het waterpeil blijft stabiel. Bij chronische hyperventilatie is het gat te groot: je verliest sneller CO2 dan je aanmaakt, en de emmer raakt langzaam leeg.
+            </p>
+          </div>
           <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mt-8">
             <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-5">Interactief</div>
             <CO2Bar client:visible />
