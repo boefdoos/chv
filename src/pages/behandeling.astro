@@ -1,0 +1,331 @@
+---
+import Base from '../layouts/Base.astro';
+import StoryTimeline from '../components/StoryTimeline.astro';
+---
+
+<Base title="Behandelopties" activeNav="behandeling">
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4 text-[13px] text-sand-500">
+    <a href="/" class="no-underline text-sand-500 hover:text-sage-300">Home</a>
+    <span class="mx-2 opacity-40">/</span>
+    <a href="/diagnose" class="no-underline text-sand-500 hover:text-sage-300">Diagnose</a>
+    <span class="mx-2 opacity-40">/</span>
+    Behandeling
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-10 pb-5">
+    <h1 class="font-serif text-hero font-light max-w-[640px]">Behandelopties</h1>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-4">
+    <StoryTimeline current="behandeling" />
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-8 pb-20">
+    <div class="max-w-[720px] mx-auto">
+
+      <!-- HERKENNEN -->
+      <div id="herkennen" class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
+        <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
+        <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
+          Chronische hyperventilatie is behandelbaar. De meeste aanpakken richten zich op hetzelfde doel: je adempatroon herstellen zodat je CO2-niveau weer normaliseert. Welke aanpak het beste werkt, verschilt per persoon.
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="bg-terra-50 rounded-xl p-5 mb-12 border border-terra-100 reveal">
+        <p class="text-[14px] text-terra-400 leading-relaxed">
+          Dit is een overzicht van bestaande behandelopties, geen medisch advies. Elk bewijsniveau is eerlijk vermeld. Bespreek behandelopties altijd met een arts of therapeut.
+        </p>
+      </div>
+
+      <!-- BEGRIJPEN -->
+      <div id="begrijpen">
+
+        <!-- Ademhalingsretraining -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Ademhalingsretraining</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Sterk bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              De eerste keus bij chronische hyperventilatie. Een ademhalingstherapeut, kinesiotherapeut of fysiotherapeut leert je een rustiger en efficienter adempatroon aan. Je leert langzamer ademen, meer via het middenrif (buikademing), en door de neus in plaats van de mond.
+            </p>
+            <p class="text-body text-sand-600 mb-3">
+              Het doel is niet ontspanning (hoewel dat een bijwerking kan zijn), maar het herstellen van je CO2-balans. Door minder te ademen stijgt je CO2 geleidelijk, en went je lichaam weer aan een normaal niveau.
+            </p>
+            <p class="text-[14px] text-sand-500">
+              De BREATHE-trial (Thomas et al., 2017) toonde aan dat gestructureerde ademhalingsretraining de kwaliteit van leven verbetert, met resultaten die tot 12 maanden aanhouden. De studie richtte zich op patienten met astma en hyperventilatieklachten (n=655).
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Aangeboden door: kinesiotherapeuten, fysiotherapeuten, logopedisten, ademhalingstherapeuten
+            </div>
+          </div>
+        </div>
+
+        <!-- Buteyko -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Buteyko-methode</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              Een specifieke vorm van ademhalingsretraining die zich richt op het bewust verminderen van je ademvolume, gecombineerd met neusademing en regelmatige ademinhoudingen. Het idee is dat je door minder te ademen je CO2 laat stijgen, en je chemoreceptoren geleidelijk wennen aan een hoger (normaler) niveau.
+            </p>
+            <p class="text-body text-sand-600 mb-3">
+              De Buteyko-methode gebruikt de "Control Pause" als meetinstrument: hoe lang je comfortabel je adem kunt inhouden na een normale uitademing. Een langere Control Pause wijst op een betere CO2-tolerantie.
+            </p>
+            <p class="text-[14px] text-sand-500">
+              Er zijn meerdere kleine studies die verbetering tonen bij astma en hyperventilatie, maar grote gerandomiseerde trials specifiek voor chronische hyperventilatie ontbreken. Veel positieve resultaten zijn anekdotisch.
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Aangeboden door: gecertificeerde Buteyko-instructeurs, sommige fysiotherapeuten
+            </div>
+          </div>
+        </div>
+
+        <!-- HRV biofeedback -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">HRV-biofeedback</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              Bij HRV-biofeedback adem je langzaam (rond de 5-6 ademhalingen per minuut) terwijl je op een scherm je hartritme-variabiliteit ziet. Het doel is om je ademhaling en je hartritme te synchroniseren, wat de activiteit van je nervus vagus (de "rustzenuw") versterkt.
+            </p>
+            <p class="text-body text-sand-600 mb-3">
+              Dit richt zich minder op CO2 en meer op het autonome zenuwstelsel: het herstellen van de balans tussen spanning en ontspanning. Voor mensen bij wie stress en angst een grote rol spelen in hun hyperventilatie, kan dit effectief zijn.
+            </p>
+            <p class="text-[14px] text-sand-500">
+              Er is groeiend bewijs voor HRV-biofeedback bij angst, hypertensie en pijn. Specifiek bewijs voor chronische hyperventilatie is beperkt, maar het mechanisme is fysiologisch plausibel.
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Aangeboden door: psychologen, fysiotherapeuten met biofeedback-apparatuur
+            </div>
+          </div>
+        </div>
+
+        <!-- Capnografie-gestuurd -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Capnografie-gestuurd oefenen</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Opkomend bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              Ademhalingsretraining met een capnograaf: een apparaat dat je CO2 in real-time meet terwijl je oefent. Je ziet direct op een scherm wat het effect is van je adempatroon op je CO2-niveau. Dit maakt de onzichtbare gevolgen van je ademhaling zichtbaar.
+            </p>
+            <p class="text-body text-sand-600 mb-3">
+              De CALM-studie (Norweg et al., 2025) combineerde capnografie met motiverende gesprekstechnieken en toonde goede haalbaarheid en hoge therapietrouw.
+            </p>
+            <p class="text-[14px] text-sand-500">
+              Dit is een veelbelovende maar nog niet breed beschikbare aanpak. Capnografen zijn duur en weinig therapeuten in Belgie werken ermee. De wetenschappelijke basis groeit.
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Beschikbaarheid: beperkt, vooral in gespecialiseerde centra
+            </div>
+          </div>
+        </div>
+
+        <!-- CGT -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Cognitieve gedragstherapie (CGT)</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Sterk bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              CGT richt zich niet direct op je ademhaling, maar op de angst en gedachtenpatronen die hyperventilatie kunnen versterken en in stand houden. Als je angstig wordt van je ademhaling, ga je er meer op letten, en dat kan het probleem verergeren.
+            </p>
+            <p class="text-body text-sand-600 mb-3">
+              CGT helpt om die cyclus te doorbreken: leren dat de sensaties onschuldig zijn, minder catastroferend reageren, en geleidelijk situaties opzoeken die je vermijdt.
+            </p>
+            <p class="text-[14px] text-sand-500">
+              Het bewijs voor CGT bij angststoornissen is sterk. Het bewijs specifiek voor chronische hyperventilatie als zelfstandige aandoening is beperkter, maar de overlap met angst is groot (44-83% comorbiditeit).
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Aangeboden door: psychologen, psychotherapeuten
+            </div>
+          </div>
+        </div>
+
+        <!-- Medicatie -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Medicatie</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Beperkt bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              Er is geen medicijn dat specifiek ontwikkeld is voor chronische hyperventilatie. Wel worden soms medicijnen ingezet die indirect helpen:
+            </p>
+            <div class="space-y-3 mb-4">
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">Tricyclische antidepressiva (bv. amitriptyline)</div>
+                <p class="text-[13px] text-sand-500 mt-1">Laag gedoseerd soms effectief, mogelijk door invloed op de ademregulatie in de hersenstam. Er zijn geen gerandomiseerde trials, wel positieve patientervaringen.</p>
+              </div>
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">SSRI's / angstremmers</div>
+                <p class="text-[13px] text-sand-500 mt-1">Kunnen helpen als angst een grote rol speelt. Behandelen niet de hyperventilatie zelf, maar verminderen de angstcomponent die het in stand kan houden.</p>
+              </div>
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">Benzodiazepines</div>
+                <p class="text-[13px] text-sand-500 mt-1">Kunnen acute panieksymptomen dempen, maar werken niet op de chronische ademklachten zelf en hebben een risico op afhankelijkheid. Niet geschikt als langetermijnoplossing.</p>
+              </div>
+            </div>
+            <p class="text-[14px] text-sand-500">
+              Medicatie wordt nooit als enige behandeling aanbevolen, maar kan in combinatie met ademhalingsretraining en/of therapie de drempel verlagen om te oefenen.
+            </p>
+            <div class="mt-4 pt-4 border-t border-sand-300 text-[13px] text-sand-500">
+              Voorschrijver: huisarts, psychiater
+            </div>
+          </div>
+        </div>
+
+        <!-- Leefstijl -->
+        <div class="mb-10 reveal">
+          <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <h2 class="font-serif text-h3 font-normal">Leefstijl</h2>
+              <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+            </div>
+            <p class="text-body text-sand-600 mb-3">
+              Verschillende leefstijlfactoren kunnen chronische hyperventilatie versterken of verminderen:
+            </p>
+            <div class="space-y-3 mb-4">
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">Lichaamsbeweging</div>
+                <p class="text-[13px] text-sand-500 mt-1">Regelmatige beweging normaliseert je adempatroon op natuurlijke wijze. Tijdens inspanning stijgt je CO2-productie, wat de balans herstelt. Intensieve training wordt breed aanbevolen.</p>
+              </div>
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">Cafeine verminderen</div>
+                <p class="text-[13px] text-sand-500 mt-1">Cafeine stimuleert het zenuwstelsel en kan ademhalingsklachten verergeren. Sommige patienten rapporteren duidelijke verbetering na het stoppen met koffie.</p>
+              </div>
+              <div class="pl-4 border-l-2 border-sand-300">
+                <div class="text-[14px] font-medium text-sand-700">Slaap</div>
+                <p class="text-[13px] text-sand-500 mt-1">Slechte slaap versterkt stressreacties en kan het adempatroon ontregelen. Goede slaaphygiene is geen behandeling op zich, maar ondersteunt het herstel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samenvattingstabel -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Overzicht</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-[13px]">
+              <thead>
+                <tr class="border-b border-sand-300">
+                  <th class="text-left py-3 pr-4 font-medium text-sand-700">Aanpak</th>
+                  <th class="text-left py-3 pr-4 font-medium text-sand-700">Bewijs</th>
+                  <th class="text-left py-3 font-medium text-sand-700">Richt zich op</th>
+                </tr>
+              </thead>
+              <tbody class="text-sand-600">
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">Ademhalingsretraining</td><td class="py-3 pr-4"><span class="text-sage-400">Sterk</span></td><td class="py-3">Adempatroon, CO2-balans</td></tr>
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">Buteyko-methode</td><td class="py-3 pr-4"><span class="text-terra-400">Matig</span></td><td class="py-3">CO2-tolerantie, setpoint</td></tr>
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">HRV-biofeedback</td><td class="py-3 pr-4"><span class="text-terra-400">Matig</span></td><td class="py-3">Autonome balans</td></tr>
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">Capnografie-gestuurd</td><td class="py-3 pr-4"><span class="text-plum-300">Opkomend</span></td><td class="py-3">CO2 real-time feedback</td></tr>
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">CGT</td><td class="py-3 pr-4"><span class="text-sage-400">Sterk</span></td><td class="py-3">Angst, gedachtenpatronen</td></tr>
+                <tr class="border-b border-sand-200"><td class="py-3 pr-4">Medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Beperkt</span></td><td class="py-3">Ondersteunend, per type</td></tr>
+                <tr><td class="py-3 pr-4">Leefstijl</td><td class="py-3 pr-4"><span class="text-terra-400">Matig</span></td><td class="py-3">Algeheel herstel</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Wat werkt voor wie -->
+        <div class="mb-14 reveal">
+          <h2 class="font-serif text-h3 font-normal mb-5">Wat werkt voor wie?</h2>
+          <p class="text-body text-sand-600 mb-4">
+            Niet elke aanpak werkt voor iedereen. Er zijn aanwijzingen dat het uitmaakt waar het probleem bij jou het zwaarst weegt:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Als CO2-disbalans centraal staat</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Je hebt constant luchthonger, onafhankelijk van stress. Breath holds geven verlichting. Ademhalingsretraining en Buteyko richten zich hier het meest direct op.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
+              <div class="text-[14px] font-medium text-sand-700 mb-2">Als stress en angst centraal staan</div>
+              <p class="text-[13px] text-sand-500 leading-relaxed">Je klachten fluctueren met je stressniveau. Ontspanning helpt tijdelijk. CGT, HRV-biofeedback en resonant breathing kunnen hier beter bij passen.</p>
+            </div>
+          </div>
+          <p class="text-[13px] text-sand-500 mt-4 italic">
+            Dit onderscheid is een werkhypothese op basis van klinische observaties, geen gevalideerde classificatie. De meeste mensen hebben een combinatie van beide factoren.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VERDIEPEN -->
+      <div id="verdiepen" class="mt-14 pt-10 border-t border-sand-300 reveal">
+        <h2 class="font-serif text-[22px] font-normal mb-6">Bronnen en verder lezen</h2>
+        <ul class="list-none">
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Thomas M, Bruton A, Little P, et al. (2017)</div>
+              <div class="text-[14px] text-sand-600 italic">Physiotherapy breathing retraining for asthma: a randomised controlled trial</div>
+              <div class="text-[13px] text-sand-500">The Lancet Respiratory Medicine, 5(1), 19-28</div>
+              <a href="https://doi.org/10.1016/S2213-2600(17)30474-5" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1016/S2213-2600(17)30474-5 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Real-time geverifieerd via PubMed</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Norweg A, Oh C, DiMango A, et al. (2025)</div>
+              <div class="text-[14px] text-sand-600 italic">Mind the Breath: Feasibility of capnography-assisted learned monitored (CALM) breathing for dyspnea treatment</div>
+              <div class="text-[13px] text-sand-500">Journal of Cardiopulmonary Rehabilitation and Prevention, 45(2), 118-131</div>
+              <a href="https://doi.org/10.1097/HCR.0000000000000879" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1097/HCR.0000000000000879 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Opkomend bewijs</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Gitler A, Vanacker L, De Couck M, et al. (2022)</div>
+              <div class="text-[14px] text-sand-600 italic">Neuromodulation applied to diseases: the case of HRV biofeedback</div>
+              <div class="text-[13px] text-sand-500">Journal of Clinical Medicine, 11(19), 5927</div>
+              <a href="https://doi.org/10.3390/jcm11195927" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.3390/jcm11195927 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Real-time geverifieerd (VUB publicatie)</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+          </li>
+          <li class="py-4 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Gardner WN (1996)</div>
+              <div class="text-[14px] text-sand-600 italic">The pathophysiology of hyperventilation disorders</div>
+              <div class="text-[13px] text-sand-500">Chest, 109(2), 516-34</div>
+              <a href="https://doi.org/10.1378/chest.109.2.516" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI: 10.1378/chest.109.2.516 &#8599;</a>
+              <div class="text-[11px] text-sand-500 italic mt-1">Nog niet onafhankelijk geverifieerd</div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk bewijs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next page -->
+      <a href="/leven-met-chv" class="mt-12 block bg-sand-200 rounded-2xl p-8 md:p-10 flex items-center justify-between no-underline text-sand-700 transition-all hover:-translate-y-0.5 hover:shadow-lg reveal">
+        <div>
+          <div class="text-[12px] text-sand-500 uppercase tracking-wider mb-1">Volgende pagina</div>
+          <div class="font-serif text-[20px] font-normal">Leven met CHV</div>
+        </div>
+        <div class="w-10 h-10 min-w-[40px] rounded-full bg-sage-50 flex items-center justify-center">
+          <svg class="w-4 h-4 text-sage-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</Base>
+
+<script>
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
