@@ -107,48 +107,56 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         </div>
       </div>
 
-      <!-- Medicatie: full width -->
-      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Medicatie</h2>
+      <!-- Medicatie + Levensstijl: twee kolommen -->
+      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Medicatie en levensstijl</h2>
 
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-6 reveal">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <p class="text-[15px] text-sand-600 leading-relaxed">Er is geen medicijn specifiek voor chronische hyperventilatie. Wel worden soms medicijnen ingezet die indirect helpen:</p>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Beperkt bewijs</span>
-        </div>
-        <div class="grid md:grid-cols-3 gap-3 mt-4">
-          <div class="pl-4 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Tricyclische antidepressiva</div>
-            <p class="text-[12px] text-sand-500 mt-1">Laag gedoseerd (bv. amitriptyline) soms effectief. Positieve patientervaringen, geen RCTs.</p>
+      <div class="grid md:grid-cols-2 gap-4 mb-12">
+        <!-- Medicatie -->
+        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-300 reveal">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-serif text-[18px] font-normal">Medicatie</h3>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Beperkt bewijs</span>
           </div>
-          <div class="pl-4 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">SSRI's</div>
-            <p class="text-[12px] text-sand-500 mt-1">Helpen bij angstcomponent. Behandelen niet de hyperventilatie zelf.</p>
+          <p class="text-[14px] text-sand-600 leading-relaxed mb-3">
+            Er is geen medicijn specifiek voor CHV. Wel worden soms middelen ingezet die indirect helpen:
+          </p>
+          <div class="space-y-2 mb-3">
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">Tricyclische antidepressiva</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Laag gedoseerd (bv. amitriptyline) soms effectief. Geen RCTs, wel positieve patientervaringen.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">SSRI's</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Helpen bij angstcomponent, niet bij de hyperventilatie zelf.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">Benzodiazepines</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Dempen acute paniek, werken niet op chronische ademklachten. Risico op afhankelijkheid.</p>
+            </div>
           </div>
-          <div class="pl-4 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Benzodiazepines</div>
-            <p class="text-[12px] text-sand-500 mt-1">Dempen acute paniek, maar werken niet op chronische ademklachten. Risico op afhankelijkheid.</p>
-          </div>
+          <p class="text-[11px] text-sand-500">Medicatie nooit als enige behandeling. Voorschrijver: huisarts, psychiater.</p>
         </div>
-        <div class="mt-4 pt-3 border-t border-sand-300 text-[12px] text-sand-500">
-          Medicatie nooit als enige behandeling. Voorschrijver: huisarts, psychiater.
-        </div>
-      </div>
 
-      <!-- Levensstijl: compact -->
-      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Levensstijl</h2>
-
-      <div class="grid md:grid-cols-3 gap-3 mb-12 reveal">
-        <div class="p-4 rounded-xl bg-sand-50 border border-sand-300">
-          <div class="text-[13px] font-medium text-sand-700 mb-1">Lichaamsbeweging</div>
-          <p class="text-[12px] text-sand-500 leading-relaxed">Kan CO2-productie verhogen. Helpt voor sommigen, kan bij ernstige hypocapnie ook triggeren.</p>
-        </div>
-        <div class="p-4 rounded-xl bg-sand-50 border border-sand-300">
-          <div class="text-[13px] font-medium text-sand-700 mb-1">Cafeine verminderen</div>
-          <p class="text-[12px] text-sand-500 leading-relaxed">Stimuleert zenuwstelsel, kan klachten verergeren.</p>
-        </div>
-        <div class="p-4 rounded-xl bg-sand-50 border border-sand-300">
-          <div class="text-[13px] font-medium text-sand-700 mb-1">Slaaphygiene</div>
-          <p class="text-[12px] text-sand-500 leading-relaxed">Slechte slaap versterkt stressreacties en ontregelt adempatroon.</p>
+        <!-- Levensstijl -->
+        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-300 reveal">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-serif text-[18px] font-normal">Levensstijl</h3>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+          </div>
+          <div class="space-y-2">
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">Lichaamsbeweging</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Kan CO2-productie verhogen. Helpt voor sommigen, kan bij ernstige hypocapnie ook triggeren.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">Cafeine verminderen</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Stimuleert zenuwstelsel, kan klachten verergeren.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-sand-300">
+              <div class="text-[12px] font-medium text-sand-700">Slaaphygiene</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Slechte slaap versterkt stressreacties en ontregelt adempatroon.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -194,13 +202,23 @@ import SurveyBanner from '../components/SurveyBanner.astro';
 
         <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Inhalatie-furosemide</h3>
+            <h3 class="font-serif text-[18px] font-normal text-plum-400">Hersenstam-gerichte medicatie</h3>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
           </div>
           <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Geinhaleerd furosemide (normaal een plaspil) activeert longstrekkreceptoren en vermindert het gevoel van luchthonger in experimentele settings. Het effect is snel en werkt onafhankelijk van CO2-niveaus.
+            Recente inzichten suggereren dat de klassieke medicatie (SSRI's, benzodiazepines) de verkeerde receptoren in de hersenstam targeten. Kandidaten die specifieker ingrijpen op de ademregulatie:
           </p>
-          <p class="text-[12px] text-sand-500">Meerdere kleine studies (Moosavi et al., 2007, 2018). Niet klinisch beschikbaar voor CHV.</p>
+          <div class="space-y-1.5 mb-2">
+            <div class="pl-3 border-l-2 border-plum-100">
+              <div class="text-[12px] font-medium text-sand-700">Alpha-2 agonisten (clonidine, guanfacine)</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Dempen sympathische overactivatie en verbreden de CO2-reserve. Clonidine verlaagde in een RCT de gevoeligheid voor hypocapnie. Guanfacine beter verdragen voor dagelijks gebruik.</p>
+            </div>
+            <div class="pl-3 border-l-2 border-plum-100">
+              <div class="text-[12px] font-medium text-sand-700">Low-dose naltrexone (LDN)</div>
+              <p class="text-[11px] text-sand-500 mt-0.5">Stimuleert de aanmaak van endogene opioden die luchthonger onderdrukken. Veilig, goedkoop, en beschikbaar via een magistraal recept. Geen directe trials voor CHV.</p>
+            </div>
+          </div>
+          <p class="text-[12px] text-sand-500">Geen van deze middelen is geregistreerd voor CHV. Bespreek ze met een arts die openstaat voor off-label overwegingen.</p>
         </div>
       </div>
 
@@ -224,7 +242,8 @@ import SurveyBanner from '../components/SurveyBanner.astro';
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">CGT</td><td class="py-3 pr-4"><span class="text-sage-400">Sterk</span></td><td class="py-3">Angst, gedachtenpatronen</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">Medicatie</td><td class="py-3 pr-4"><span class="text-plum-300">Beperkt</span></td><td class="py-3">Ondersteunend</td></tr>
               <tr class="border-b border-sand-200"><td class="py-3 pr-4">Vagus nerve stimulatie</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Parasympathisch zenuwstelsel</td></tr>
-              <tr><td class="py-3 pr-4">Neurosteroiden / DBS / furosemide</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Hersenstam, luchthongerperceptie</td></tr>
+              <tr><td class="py-3 pr-4">Neurosteroiden / DBS</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Hersenstam, luchthongerperceptie</td></tr>
+              <tr><td class="py-3 pr-4">Alpha-2 agonisten / LDN</td><td class="py-3 pr-4"><span class="text-plum-300">Experimenteel</span></td><td class="py-3">Sympathisch zenuwstelsel, ademdrang</td></tr>
             </tbody>
           </table>
         </div>
@@ -274,13 +293,12 @@ import SurveyBanner from '../components/SurveyBanner.astro';
           </li>
           <li class="py-4 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
-              <div class="text-[14px] font-medium text-sand-700">Moosavi SH, et al. (2007, 2018)</div>
-              <div class="text-[14px] text-sand-600 italic">Effect of inhaled furosemide on air hunger</div>
-              <div class="text-[13px] text-sand-500">Respiratory Physiology & Neurobiology / Respiratory Research</div>
-              <a href="https://doi.org/10.1016/j.resp.2006.06.010" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
-              <span class="text-[11px] text-sand-500 italic ml-2">Nog niet onafhankelijk geverifieerd</span>
+              <div class="text-[14px] font-medium text-sand-700">Pharmacological Interventions Targeting Brainstem Respiratory Pattern Generators (2026)</div>
+              <div class="text-[14px] text-sand-600 italic">Onderzoeksnotitie: alpha-2 agonisten, neurosteroiden, LDN en orexine-antagonisten bij hersenstam-gemedieerde ademhalingsstoornissen</div>
+              <div class="text-[13px] text-sand-500">BreathWise Research, intern document</div>
+              <span class="text-[11px] text-sand-500 italic">Niet peer-reviewed, mechanistische onderbouwing op basis van gepubliceerde bronnen</span>
             </div>
-            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Experimenteel</span>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Werkhypothese</span>
           </li>
         </ul>
       </div>
