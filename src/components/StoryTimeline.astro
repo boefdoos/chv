@@ -27,19 +27,19 @@ const currentIndex = pages.findIndex(p => p.slug === current);
         <div class="flex items-center shrink-0">
           {/* Node */}
           <a
-            href={isPast || isActive ? page.href : undefined}
+            href={page.href}
             class:list={[
               "flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] transition-all no-underline whitespace-nowrap",
               isActive && "bg-sage-300 text-white font-medium",
               isPast && "bg-sage-50 text-sage-400 hover:bg-sage-100 cursor-pointer",
-              isFuture && "bg-sand-200 text-sand-400 cursor-default",
+              isFuture && "bg-sand-200 text-sand-500 hover:bg-sand-300 cursor-pointer",
             ]}
           >
             <span class:list={[
               "w-[18px] h-[18px] rounded-full flex items-center justify-center text-[10px] font-medium shrink-0",
               isActive && "bg-white/20 text-white",
               isPast && "bg-sage-200 text-sage-400",
-              isFuture && "bg-sand-300 text-sand-400",
+              isFuture && "bg-sand-300 text-sand-500",
             ]}>
               {isPast ? (
                 <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
