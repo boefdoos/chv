@@ -1,10 +1,29 @@
 import { useState, useEffect } from 'react';
 
 const steps = [
-  { id: 'inhale', title: 'Inademen', desc: 'Zuurstof gaat naar je longen en bloed', color: '#d0e6f2', stroke: '#4A7BA0', iconD: 'M12 19V5m0 0l-5 5m5-5l5 5' },
-  { id: 'process', title: 'Verbranding', desc: 'Cellen gebruiken O₂ en maken CO₂', color: '#fef3c7', stroke: '#A0785A', iconD: '' },
-  { id: 'exhale', title: 'Uitademen', desc: 'CO₂ verlaat je lichaam via de longen', color: '#d1fae5', stroke: '#4A7C6F', iconD: 'M12 5v14m0 0l-5-5m5 5l5-5' },
+  { id: 'inhale', title: 'Inademen', desc: 'Zuurstof naar longen en bloed', color: '#d0e6f2', stroke: '#4A7BA0' },
+  { id: 'process', title: 'Verbranding', desc: 'Cellen gebruiken O₂, maken CO₂', color: '#fef3c7', stroke: '#A0785A' },
+  { id: 'exhale', title: 'Uitademen', desc: 'CO₂ verlaat je lichaam', color: '#d1fae5', stroke: '#4A7C6F' },
 ];
+
+function InhaleIcon({ x, y, stroke }: { x: number; y: number; stroke: string }) {
+  return <path d={`M${x} ${y + 7}V${y - 7}m0 0l-4 4m4-4l4 4`} fill="none" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />;
+}
+
+function ProcessIcon({ x, y, stroke }: { x: number; y: number; stroke: string }) {
+  return (
+    <g>
+      <circle cx={x} cy={y} r="6" fill="none" stroke={stroke} strokeWidth="1.5" />
+      <path d={`M${x} ${y - 4}v4l2 2`} fill="none" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" />
+    </g>
+  );
+}
+
+function ExhaleIcon({ x, y, stroke }: { x: number; y: number; stroke: string }) {
+  return <path d={`M${x} ${y - 7}v14m0 0l-4-4m4 4l4-4`} fill="none" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />;
+}
+
+const icons = [InhaleIcon, ProcessIcon, ExhaleIcon];
 
 export default function BreathingCycle() {
   const [active, setActive] = useState(0);
@@ -16,57 +35,85 @@ export default function BreathingCycle() {
   }, []);
 
   return (
-    <div style={{ maxWidth: '480px', margin: '0 auto' }}>
-      <svg viewBox="0 0 480 130" width="100%" xmlns="http://www.w3.org/2000/svg">
-        {steps.map((step, i) => {
-          const cx = 80 + i * 160;
-          const cy = 42;
-          const isActive = active === i;
+    <div>
+      {/* Desktop: horizontal */}
+      <div className="hidden md:block" style={{ maxWidth: '520px', margin: '0 auto' }}>
+        <svg viewBox="0 0 520 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+          {steps.map((step, i) => {
+            const cx = 87 + i * 173;
+            const cy = 36;
+            const isActive = active === i;
+            const Icon = icons[i];
 
-          return (
-            <g key={step.id}>
-              {/* Circle */}
-              <circle cx={cx} cy={cy} r={isActive ? 34 : 30} fill={step.color}
-                style={{ transition: 'r 0.3s ease' }} />
-              {isActive && (
-                <circle cx={cx} cy={cy} r="38" fill="none" stroke="#c9b99a" strokeWidth="1"
-                  strokeDasharray="4 4" style={{ animation: 'spin 8s linear infinite' }} />
-              )}
+            return (
+              <g key={step.id}>
+                <circle cx={cx} cy={cy} r={isActive ? 32 : 28} fill={step.color}
+                  style={{ transition: 'all 0.3s ease' }} />
+                <Icon x={cx} y={cy} stroke={step.stroke} />
+                <text x={cx} y={82} textAnchor="middle"
+                  style={{ fontSize: '13px', fontWeight: 600, fill: '#5a4a3a' }}>
+                  {step.title}
+                </text>
+                <text x={cx} y={100} textAnchor="middle"
+                  style={{ fontSize: '10.5px', fill: '#8a7a6a' }}>
+                  {step.desc}
+                </text>
+                {i < 2 && (
+                  <g>
+                    <line x1={cx + 36} y1={cy} x2={cx + 137} y2={cy}
+                      stroke="#c9b99a" strokeWidth="1.2" />
+                    <path d={`M${cx + 132} ${cy - 4}L${cx + 138} ${cy}L${cx + 132} ${cy + 4}`}
+                      fill="none" stroke="#c9b99a" strokeWidth="1.2"
+                      strokeLinecap="round" strokeLinejoin="round" />
+                  </g>
+                )}
+              </g>
+            );
+          })}
+        </svg>
+      </div>
 
-              {/* Icon */}
-              {step.id === 'process' ? (
-                <g transform={`translate(${cx - 10}, ${cy - 10})`}>
-                  <circle cx="10" cy="10" r="6" fill="none" stroke={step.stroke} strokeWidth="1.5" />
-                  <path d="M10 6v4l2 2" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" />
-                </g>
-              ) : (
-                <path d={step.iconD} fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-                  transform={`translate(${cx - 12}, ${cy - 12}) scale(1)`} />
-              )}
-
-              {/* Label */}
-              <text x={cx} y={cy + 50} textAnchor="middle" style={{ fontSize: '13px', fontWeight: 500, fill: '#5a4a3a' }}>
-                {step.title}
-              </text>
-              <text x={cx} y={cy + 66} textAnchor="middle" style={{ fontSize: '10px', fill: '#8a7a6a' }}>
-                {step.desc}
-              </text>
-
-              {/* Arrow to next */}
-              {i < 2 && (
-                <g>
-                  <line x1={cx + 38} y1={cy} x2={cx + 122} y2={cy} stroke="#c9b99a" strokeWidth="1.2" />
-                  <path d={`M${cx + 117} ${cy - 4} L${cx + 123} ${cy} L${cx + 117} ${cy + 4}`}
-                    fill="none" stroke="#c9b99a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </g>
-              )}
-            </g>
-          );
-        })}
-      </svg>
-      <style>{`
-        @keyframes spin { to { transform-origin: center; transform: rotate(360deg); } }
-      `}</style>
+      {/* Mobile: vertical */}
+      <div className="md:hidden">
+        <div className="flex flex-col items-center gap-2">
+          {steps.map((step, i) => {
+            const isActive = active === i;
+            return (
+              <div key={step.id}>
+                <div className="flex items-center gap-4">
+                  <div
+                    className="shrink-0 rounded-full flex items-center justify-center"
+                    style={{
+                      width: isActive ? 52 : 46,
+                      height: isActive ? 52 : 46,
+                      backgroundColor: step.color,
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      {i === 0 && <path d="M12 19V5m0 0l-5 5m5-5l5 5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
+                      {i === 1 && <><circle cx="12" cy="12" r="6" fill="none" stroke={step.stroke} strokeWidth="1.5" /><path d="M12 8v4l2 2" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" /></>}
+                      {i === 2 && <path d="M12 5v14m0 0l-5-5m5 5l5-5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-[15px] font-medium text-sand-700">{step.title}</div>
+                    <div className="text-[13px] text-sand-500">{step.desc}</div>
+                  </div>
+                </div>
+                {i < 2 && (
+                  <div className="flex justify-start ml-[23px] py-1">
+                    <svg width="6" height="20" viewBox="0 0 6 20">
+                      <line x1="3" y1="0" x2="3" y2="14" stroke="#c9b99a" strokeWidth="1.2" />
+                      <path d="M1 12L3 16L5 12" fill="none" stroke="#c9b99a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
