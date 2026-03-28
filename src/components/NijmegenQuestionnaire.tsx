@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const questions = [
   'Pijn op de borst',
@@ -25,6 +25,7 @@ export default function NijmegenQuestionnaire() {
   const [open, setOpen] = useState(false);
   const [answers, setAnswers] = useState<number[]>(new Array(16).fill(-1));
   const [submitted, setSubmitted] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   const setAnswer = (qi: number, val: number) => {
     const next = [...answers];
@@ -36,7 +37,12 @@ export default function NijmegenQuestionnaire() {
   const total = answers.reduce((sum, a) => sum + (a >= 0 ? a : 0), 0);
 
   const handleSubmit = () => {
-    if (allAnswered) setSubmitted(true);
+    if (allAnswered) {
+      setSubmitted(true);
+      setTimeout(() => {
+        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
   };
 
   const handleReset = () => {
@@ -77,7 +83,7 @@ export default function NijmegenQuestionnaire() {
   if (submitted) {
     const isElevated = total > 23;
     return (
-      <div className="py-4">
+      <div className="py-4" ref={resultRef}>
         <div className="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8">
           <div className="flex items-center justify-between mb-4">
             <div className="text-[11px] font-medium uppercase tracking-wider text-sand-500">Resultaat</div>
@@ -160,7 +166,7 @@ export default function NijmegenQuestionnaire() {
                     <button
                       key={val}
                       onClick={() => setAnswer(qi, val)}
-                      className={`flex-1 py-1.5 md:py-2 rounded text-[11px] md:text-[12px] border transition-all cursor-pointer ${
+                      className={`flex-1 py-2 md:py-2 rounded text-[11px] md:text-[12px] border transition-all cursor-pointer ${
                         answers[qi] === val
                           ? 'bg-sage-300 text-white border-sage-300 font-medium'
                           : 'bg-white text-sand-500 border-sand-200 hover:border-sage-200'

@@ -39,6 +39,41 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
 }
 
+/* Mobile text scaling */
+@media (max-width: 767px) {
+  .text-body {
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+  }
+
+  .font-serif.text-hero {
+    font-size: 32px !important;
+  }
+
+  .font-serif.text-h3 {
+    font-size: 22px !important;
+  }
+
+  /* Intro blocks */
+  .font-serif.text-\[20px\] {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Small text bumps */
+  .text-\[13px\] {
+    font-size: 14px !important;
+  }
+
+  .text-\[14px\] {
+    font-size: 15px !important;
+  }
+
+  .text-\[12px\] {
+    font-size: 13px !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
