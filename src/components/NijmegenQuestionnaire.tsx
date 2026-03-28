@@ -58,18 +58,18 @@ export default function NijmegenQuestionnaire() {
       <div className="py-4">
         <button
           onClick={() => setOpen(true)}
-          className="w-full text-left bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 cursor-pointer hover:border-sage-200 transition-colors group"
+          className="w-full text-left bg-terra-50 border border-terra-100 rounded-2xl p-6 md:p-8 cursor-pointer hover:border-terra-200 transition-colors group"
         >
           <div className="flex items-center justify-between gap-4">
             <div>
-              <div className="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-1">Zelftest</div>
+              <div className="text-[11px] font-medium uppercase tracking-wider text-terra-300 mb-1">Zelftest</div>
               <div className="font-serif text-[20px] font-normal text-sand-700 mb-2">Nijmegen-vragenlijst</div>
               <p className="text-[13px] text-sand-500 leading-relaxed">
                 16 vragen, 2 minuten. Je antwoorden worden niet opgeslagen of verstuurd.
               </p>
             </div>
-            <div className="w-10 h-10 min-w-[40px] rounded-full bg-sage-50 flex items-center justify-center shrink-0 group-hover:bg-sage-100 transition-colors">
-              <svg className="w-4 h-4 text-sage-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <div className="w-10 h-10 min-w-[40px] rounded-full bg-terra-300 flex items-center justify-center shrink-0 group-hover:bg-terra-400 transition-colors">
+              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </div>
