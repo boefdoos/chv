@@ -59,7 +59,7 @@ export default function CO2Bar() {
           <div className="absolute -inset-x-2 -inset-y-1 rounded-lg bg-sand-700/[0.08] -z-10" />
         </div>
       </div>
-      <div className="flex gap-2 justify-center mt-5">
+      <div className="flex gap-2 justify-center mt-5 flex-wrap">
         {(['laag', 'normaal', 'hoog'] as Level[]).map((l) => (
           <button
             key={l}

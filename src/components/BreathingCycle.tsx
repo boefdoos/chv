@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const steps = [
-  { id: 'inhale', title: 'Inademen', desc: 'Zuurstof gaat naar je longen en bloed', color: 'bg-blue-100', stroke: '#4A7BA0', dot: 'bg-blue-300' },
-  { id: 'process', title: 'Verbranding', desc: 'Cellen gebruiken O2 en maken CO2', color: 'bg-amber-50', stroke: '#A0785A', dot: 'bg-amber-200' },
-  { id: 'exhale', title: 'Uitademen', desc: 'CO2 verlaat je lichaam via de longen', color: 'bg-emerald-50', stroke: '#4A7C6F', dot: 'bg-emerald-200' },
+  { id: 'inhale', title: 'Inademen', desc: 'Zuurstof gaat naar je longen en bloed', color: '#d0e6f2', stroke: '#4A7BA0', iconD: 'M12 19V5m0 0l-5 5m5-5l5 5' },
+  { id: 'process', title: 'Verbranding', desc: 'Cellen gebruiken O₂ en maken CO₂', color: '#fef3c7', stroke: '#A0785A', iconD: '' },
+  { id: 'exhale', title: 'Uitademen', desc: 'CO₂ verlaat je lichaam via de longen', color: '#d1fae5', stroke: '#4A7C6F', iconD: 'M12 5v14m0 0l-5-5m5 5l5-5' },
 ];
-
-const iconPaths: Record<string, string> = {
-  inhale: 'M12 19V5m0 0l-5 5m5-5l5 5',
-  process: '',
-  exhale: 'M12 5v14m0 0l-5-5m5 5l5-5',
-};
 
 export default function BreathingCycle() {
   const [active, setActive] = useState(0);
@@ -22,40 +16,56 @@ export default function BreathingCycle() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-4 md:gap-6 py-5 flex-wrap md:flex-nowrap">
-      {steps.map((step, i) => (
-        <div key={step.id} className="contents">
-          <div className="text-center flex-1 min-w-[110px]">
-            <div className={`w-20 h-20 rounded-full mx-auto mb-3 flex items-center justify-center relative transition-transform duration-300 ${step.color} ${active === i ? 'scale-110' : ''}`}>
-              {step.id === 'process' ? (
-                <svg viewBox="0 0 24 24" fill="none" stroke={step.stroke} strokeWidth="1.5" className="w-7 h-7"><circle cx="12" cy="12" r="6" /><path d="M12 8v4l2 2" /></svg>
-              ) : (
-                <svg viewBox="0 0 24 24" fill="none" stroke={step.stroke} strokeWidth="1.5" className="w-7 h-7"><path d={iconPaths[step.id]} /></svg>
+    <div style={{ maxWidth: '480px', margin: '0 auto' }}>
+      <svg viewBox="0 0 480 130" width="100%" xmlns="http://www.w3.org/2000/svg">
+        {steps.map((step, i) => {
+          const cx = 80 + i * 160;
+          const cy = 42;
+          const isActive = active === i;
+
+          return (
+            <g key={step.id}>
+              {/* Circle */}
+              <circle cx={cx} cy={cy} r={isActive ? 34 : 30} fill={step.color}
+                style={{ transition: 'r 0.3s ease' }} />
+              {isActive && (
+                <circle cx={cx} cy={cy} r="38" fill="none" stroke="#c9b99a" strokeWidth="1"
+                  strokeDasharray="4 4" style={{ animation: 'spin 8s linear infinite' }} />
               )}
-              {active === i && <div className="absolute -inset-1.5 rounded-full border-[1.5px] border-dashed border-sand-300" style={{ animation: 'spin 8s linear infinite' }} />}
-              {active === i && [0, 1, 2].map(p => (
-                <div key={p} className={`absolute w-1.5 h-1.5 rounded-full ${step.dot}`}
-                  style={{ top: `${18 + p * 8}px`, left: `${22 + p * 12}px`, animation: 'particleDrift 2.5s ease-in-out infinite', animationDelay: `${p * 0.4}s` }} />
-              ))}
-            </div>
-            <div className="font-medium text-[14px] text-sand-700 mb-1">{step.title}</div>
-            <div className="text-[12px] text-sand-500 leading-snug">{step.desc}</div>
-          </div>
-          {i < 2 && (
-            <div className="flex-shrink-0 relative w-10 flex items-center justify-center md:rotate-0 rotate-90">
-              <div className="w-7 h-[1.5px] bg-sand-300 relative">
-                <div className="absolute right-0 -top-[3px] w-[7px] h-[7px] border-r-[1.5px] border-t-[1.5px] border-sand-300 rotate-45" />
-              </div>
-              <div className="absolute w-[5px] h-[5px] rounded-full top-1/2 -translate-y-1/2"
-                style={{ background: i === 0 ? '#6aabcf' : '#C08B68', animation: 'travelDot 3s ease-in-out infinite', animationDelay: `${i}s` }} />
-            </div>
-          )}
-        </div>
-      ))}
+
+              {/* Icon */}
+              {step.id === 'process' ? (
+                <g transform={`translate(${cx - 10}, ${cy - 10})`}>
+                  <circle cx="10" cy="10" r="6" fill="none" stroke={step.stroke} strokeWidth="1.5" />
+                  <path d="M10 6v4l2 2" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" />
+                </g>
+              ) : (
+                <path d={step.iconD} fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+                  transform={`translate(${cx - 12}, ${cy - 12}) scale(1)`} />
+              )}
+
+              {/* Label */}
+              <text x={cx} y={cy + 50} textAnchor="middle" style={{ fontSize: '13px', fontWeight: 500, fill: '#5a4a3a' }}>
+                {step.title}
+              </text>
+              <text x={cx} y={cy + 66} textAnchor="middle" style={{ fontSize: '10px', fill: '#8a7a6a' }}>
+                {step.desc}
+              </text>
+
+              {/* Arrow to next */}
+              {i < 2 && (
+                <g>
+                  <line x1={cx + 38} y1={cy} x2={cx + 122} y2={cy} stroke="#c9b99a" strokeWidth="1.2" />
+                  <path d={`M${cx + 117} ${cy - 4} L${cx + 123} ${cy} L${cx + 117} ${cy + 4}`}
+                    fill="none" stroke="#c9b99a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </g>
+              )}
+            </g>
+          );
+        })}
+      </svg>
       <style>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes particleDrift { 0% { opacity:0; transform:translate(0,8px) scale(.5); } 30% { opacity:.8; transform:translate(0,-4px) scale(1); } 70% { opacity:.6; transform:translate(0,-14px) scale(.8); } 100% { opacity:0; transform:translate(0,-22px) scale(.4); } }
-        @keyframes travelDot { 0% { left:0; opacity:0; } 15% { opacity:1; } 85% { opacity:1; } 100% { left:100%; opacity:0; } }
+        @keyframes spin { to { transform-origin: center; transform: rotate(360deg); } }
       `}</style>
     </div>
   );
