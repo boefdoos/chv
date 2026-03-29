@@ -3,9 +3,13 @@ interface Props {
   title: string;
   description?: string;
   activeNav?: string;
+  canonical?: string;
 }
 
-const { title, description = 'Wetenschappelijk onderbouwde informatie over chronische hyperventilatie', activeNav = '' } = Astro.props;
+const { title, description = 'Wetenschappelijk onderbouwde informatie over chronische hyperventilatie', activeNav = '', canonical = '' } = Astro.props;
+const siteUrl = 'https://www.chronische-hyperventilatie.be';
+const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+const fullTitle = title === 'Home' ? 'Chronische Hyperventilatie | Wetenschappelijk onderbouwde informatie' : `${title} | Chronische Hyperventilatie`;
 ---
 
 <!DOCTYPE html>
@@ -14,7 +18,47 @@ const { title, description = 'Wetenschappelijk onderbouwde informatie over chron
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <title>{title} - Chronische Hyperventilatie</title>
+  <title>{fullTitle}</title>
+  <link rel="canonical" href={pageUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:locale" content="nl_BE" />
+  <meta property="og:site_name" content="Chronische Hyperventilatie" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Extra SEO -->
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="nl-BE" />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    'name': fullTitle,
+    'description': description,
+    'url': pageUrl,
+    'inLanguage': 'nl-BE',
+    'about': {
+      '@type': 'MedicalCondition',
+      'name': 'Chronische Hyperventilatie',
+      'alternateName': 'Chronisch Hyperventilatie Syndroom'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'BreathWise Research',
+      'url': siteUrl
+    },
+    'lastReviewed': '2026-03'
+  })} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
