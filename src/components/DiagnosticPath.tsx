@@ -39,11 +39,8 @@ export default function DiagnosticPath() {
           {/* Conclusie */}
           <div className="flex items-start gap-4 pt-1">
             <div className="shrink-0 w-10 flex justify-center pt-1">
-              <div className="w-[38px] h-[38px] rounded-full bg-terra-100 border-2 border-terra-300 flex items-center justify-center z-10 relative">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M8 3 Q12 3 12 7 Q12 10 9 10.5 L9 12" stroke="#c4724a" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                  <circle cx="9" cy="13.5" r="0.8" fill="#c4724a"/>
-                </svg>
+              <div className="w-[38px] h-[38px] rounded-full bg-terra-100 border-2 border-terra-300 flex items-center justify-center z-10 relative text-terra-400 font-bold text-[15px]">
+                !
               </div>
             </div>
             <div className="flex-1 bg-terra-50 border border-terra-200 rounded-xl px-4 py-4">
@@ -51,7 +48,7 @@ export default function DiagnosticPath() {
                 "We kunnen niets vinden. Het is waarschijnlijk stress."
               </p>
               <p className="text-[12px] text-terra-300 mt-2">
-                Gemiddeld 3 tot 5 jaar na de eerste klachten
+                Vaak jarenlang, na meerdere specialisten
               </p>
             </div>
           </div>
