@@ -4,39 +4,20 @@ export default function SetpointShift() {
   const [state, setState] = useState<'gezond' | 'chv'>('gezond');
   const isChv = state === 'chv';
 
-  // De schaal loopt van 20 tot 50 mmHg (PaCO2)
-  // Normaal setpoint: ~40 mmHg → positie 80% op de schaal
-  // CHV setpoint: ~30 mmHg → positie 33% op de schaal
-  // CHV werkelijke CO2: ~30 mmHg (structureel laag)
-  // Normaal CO2: ~40 mmHg
-
   const scaleMin = 20;
   const scaleMax = 50;
-  const scaleW = 420; // breedte van de as in SVG-eenheden
-  const scaleX = 30;  // startpunt x
+  const scaleW   = 400;
+  const scaleX   = 40;
 
   function toX(mmhg: number) {
     return scaleX + ((mmhg - scaleMin) / (scaleMax - scaleMin)) * scaleW;
   }
 
-  const normalSetpoint = 40;
-  const chvSetpoint    = 30;
-  const chvActual      = 30;
-
-  const setpointX = isChv ? toX(chvSetpoint) : toX(normalSetpoint);
-  const alarmZoneStart = setpointX;
-  const alarmZoneEnd   = toX(scaleMax);
-  const co2X           = isChv ? toX(chvActual) : toX(normalSetpoint);
-
-  // Kleur alarmzone
-  const alarmFill   = '#fce8e4';
-  const alarmStroke = '#d4845a';
-  const okFill      = '#eef4f0';
+  const setpointX = isChv ? toX(30) : toX(40);
+  const co2X      = isChv ? toX(30) : toX(40);
 
   return (
     <div className="py-2">
-
-      {/* Toggle */}
       <div className="flex gap-2 justify-center mb-8">
         {(['gezond', 'chv'] as const).map((s) => (
           <button
@@ -56,133 +37,123 @@ export default function SetpointShift() {
       </div>
 
       <svg
-        viewBox="0 0 480 200"
+        viewBox="0 0 480 210"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full max-w-[540px] mx-auto block"
         style={{ fontFamily: 'inherit' }}
       >
-
-        {/* ── Achtergrond zones ── */}
-        {/* OK-zone: links van setpoint */}
+        {/* OK-zone */}
         <rect
-          x={scaleX} y={52}
-          width={setpointX - scaleX} height={40}
-          fill={okFill}
-          rx="4"
-          style={{ transition: 'width 0.6s cubic-bezier(0.34,1.1,0.64,1), x 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
+          x={scaleX} y={55}
+          width={setpointX - scaleX} height={44}
+          fill="#eef4f0" rx="4"
+          style={{ transition: 'width 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
-        {/* Alarm-zone: rechts van setpoint */}
+        {/* Alarm-zone */}
         <rect
-          x={setpointX} y={52}
-          width={alarmZoneEnd - setpointX} height={40}
-          fill={alarmFill}
-          rx="4"
+          x={setpointX} y={55}
+          width={toX(scaleMax) - setpointX} height={44}
+          fill="#fce8e4" rx="4"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), width 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
 
         {/* Zone-labels */}
-        <text
-          x={scaleX + 8} y={76}
-          fontSize="10" fill="#5a9870"
-          style={{ transition: 'opacity 0.4s' }}
-          opacity={setpointX - scaleX > 40 ? 1 : 0}
+        <text x={scaleX + 10} y={82} fontSize="12" fill="#5a9870"
+          opacity={setpointX - scaleX > 60 ? 1 : 0}
+          style={{ transition: 'opacity 0.3s' }}
         >rustig ademen</text>
         <text
-          x={Math.min(setpointX + 8, toX(44))} y={76}
-          fontSize="10" fill="#c4724a"
+          x={Math.min(setpointX + 10, toX(43))} y={82}
+          fontSize="12" fill="#c4724a"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         >meer ademen!</text>
 
-        {/* ── Horizontale as ── */}
-        <line x1={scaleX} y1={92} x2={scaleX + scaleW} y2={92} stroke="#c8bdb0" strokeWidth="1.5" />
+        {/* As */}
+        <line x1={scaleX} y1={99} x2={scaleX + scaleW} y2={99} stroke="#c8bdb0" strokeWidth="1.5" />
 
         {/* Tikken + labels */}
         {[20, 25, 30, 35, 40, 45, 50].map((v) => (
           <g key={v}>
-            <line x1={toX(v)} y1={88} x2={toX(v)} y2={96} stroke="#c8bdb0" strokeWidth="1" />
-            <text x={toX(v)} y={107} fontSize="9" textAnchor="middle" fill="#a09080">{v}</text>
+            <line x1={toX(v)} y1={95} x2={toX(v)} y2={103} stroke="#c8bdb0" strokeWidth="1" />
+            <text x={toX(v)} y={116} fontSize="11" textAnchor="middle" fill="#a09080">{v}</text>
           </g>
         ))}
-        <text x={scaleX + scaleW / 2} y={120} fontSize="9.5" textAnchor="middle" fill="#a09080">CO₂ in bloed (mmHg)</text>
+        <text x={scaleX + scaleW / 2} y={132} fontSize="11.5" textAnchor="middle" fill="#a09080">
+          CO₂ in bloed (mmHg)
+        </text>
 
-        {/* ── Setpoint-markering ── */}
+        {/* Setpoint-streep */}
         <line
-          x1={setpointX} y1={44}
-          x2={setpointX} y2={96}
-          stroke="#7a6a5a"
-          strokeWidth="2"
-          strokeDasharray="4 2"
+          x1={setpointX} y1={46}
+          x2={setpointX} y2={103}
+          stroke="#7a6a5a" strokeWidth="2" strokeDasharray="4 2"
           style={{ transition: 'x1 0.6s cubic-bezier(0.34,1.1,0.64,1), x2 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         {/* Setpoint-label */}
         <rect
-          x={setpointX - 28} y={24}
-          width={56} height={18}
-          rx="4" fill="#f0e8e0"
-          stroke="#c8b8a8" strokeWidth="1"
+          x={setpointX - 34} y={24}
+          width={68} height={20} rx="4"
+          fill="#f0e8e0" stroke="#c8b8a8" strokeWidth="1"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         <text
-          x={setpointX} y={36}
-          fontSize="9.5" textAnchor="middle" fill="#7a6a5a" fontWeight="600"
+          x={setpointX} y={38}
+          fontSize="12" textAnchor="middle" fill="#7a6a5a" fontWeight="600"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         >setpoint</text>
 
-        {/* ── CO2-niveau indicator (pijl omhoog) ── */}
-        {/* Verticale lijn */}
+        {/* CO2-indicator pijl */}
         <line
-          x1={co2X} y1={96}
-          x2={co2X} y2={148}
-          stroke={isChv ? '#c4724a' : '#5a9870'}
-          strokeWidth="2.5"
+          x1={co2X} y1={103} x2={co2X} y2={158}
+          stroke={isChv ? '#c4724a' : '#5a9870'} strokeWidth="2.5"
           style={{ transition: 'x1 0.6s cubic-bezier(0.34,1.1,0.64,1), x2 0.6s cubic-bezier(0.34,1.1,0.64,1), stroke 0.4s' }}
         />
-        {/* Driehoekje omhoog */}
         <polygon
-          points={`${co2X},94 ${co2X - 7},108 ${co2X + 7},108`}
+          points={`${co2X},101 ${co2X - 8},115 ${co2X + 8},115`}
           fill={isChv ? '#c4724a' : '#5a9870'}
           style={{ transition: 'all 0.6s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
-        {/* Label CO2-niveau */}
+        {/* Indicator-label */}
         <rect
-          x={co2X - 36} y={150}
-          width={72} height={32}
-          rx="5"
+          x={co2X - 42} y={160}
+          width={84} height={38} rx="5"
           fill={isChv ? '#fce8e4' : '#eef4f0'}
-          stroke={isChv ? '#d4845a' : '#9ecaaa'}
-          strokeWidth="1.2"
+          stroke={isChv ? '#d4845a' : '#9ecaaa'} strokeWidth="1.2"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s, stroke 0.4s' }}
         />
         <text
-          x={co2X} y={163}
-          fontSize="9.5" textAnchor="middle"
-          fill={isChv ? '#a05030' : '#3a8050'}
-          fontWeight="600"
+          x={co2X} y={177}
+          fontSize="12" textAnchor="middle"
+          fill={isChv ? '#a05030' : '#3a8050'} fontWeight="600"
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s' }}
         >jouw CO₂</text>
         <text
-          x={co2X} y={176}
-          fontSize="9" textAnchor="middle"
+          x={co2X} y={192}
+          fontSize="11" textAnchor="middle"
           fill={isChv ? '#c4724a' : '#5a9870'}
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s' }}
         >{isChv ? '≈ 30 mmHg' : '≈ 40 mmHg'}</text>
 
-        {/* ── Extra annotatie bij CHV: "dit voelt als te hoog" ── */}
+        {/* Annotatie */}
         {isChv && (
           <g style={{ animation: 'spFade 0.5s ease 0.3s both' }}>
-            <text x={toX(35)} y={42} fontSize="9" fill="#c4724a" textAnchor="middle">↑ hersenstam ziet dit</text>
-            <text x={toX(35)} y={53} fontSize="9" fill="#c4724a" textAnchor="middle">als "te hoog"</text>
+            <text x={toX(36)} y={46} fontSize="11" fill="#c4724a" textAnchor="middle">
+              ↑ hersenstam ziet dit
+            </text>
+            <text x={toX(36)} y={59} fontSize="11" fill="#c4724a" textAnchor="middle">
+              als "te hoog"
+            </text>
           </g>
         )}
         {!isChv && (
           <g style={{ animation: 'spFade 0.5s ease 0.3s both' }}>
-            <text x={toX(38)} y={44} fontSize="9" fill="#5a9870" textAnchor="middle">✓ in balans</text>
+            <text x={toX(40)} y={48} fontSize="12" fill="#5a9870" textAnchor="middle">
+              ✓ in balans
+            </text>
           </g>
         )}
-
       </svg>
 
-      {/* Teksttoelichting */}
       <div
         key={state}
         className={`mt-2 rounded-xl px-5 py-4 text-[14px] leading-relaxed text-center max-w-[460px] mx-auto ${
@@ -191,8 +162,8 @@ export default function SetpointShift() {
         style={{ animation: 'spFade 0.35s ease both' }}
       >
         {isChv
-          ? 'Het setpoint is verschoven naar ~30 mmHg. Zodra CO₂ stijgt richting normaal, slaat de hersenstam alarm — en adem je automatisch meer.'
-          : 'Het setpoint staat op ~40 mmHg. CO₂ en setpoint zijn in evenwicht. De hersenstam is tevreden.'}
+          ? 'Het setpoint is verschoven naar ≈ 30 mmHg. Zodra CO₂ stijgt richting normaal, slaat de hersenstam alarm — en adem je automatisch meer.'
+          : 'Het setpoint staat op ≈ 40 mmHg. CO₂ en setpoint zijn in evenwicht. De hersenstam is tevreden.'}
       </div>
 
       <style>{`
