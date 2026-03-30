@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import StoryTimeline from '../../components/StoryTimeline.astro';
 import BreathingCycle from '../../components/BreathingCycle.tsx';
 import CO2Bar from '../../components/CO2Bar.tsx';
+import BohrEffect from '../../components/BohrEffect.tsx';
 ---
 
 <Base title="Hoe werkt ademhaling?" description="Je ademhaling wordt gestuurd door CO2, niet door zuurstof. Leer hoe chemoreceptoren, het setpoint en het Bohr-effect je adempatroon bepalen." activeNav="wat-is-het" canonical="/wat-is-het/ademhaling">
@@ -58,6 +59,10 @@ import CO2Bar from '../../components/CO2Bar.tsx';
             <p class="text-[15px] leading-[1.7] text-sand-600">
               <strong class="text-sand-700 font-medium">Vergelijking:</strong> stel je voor dat je bloed een bezorgdienst is. Hemoglobine is de vrachtwagen, zuurstof zijn de pakketjes. CO2 is de sleutel die de laaddeuren opent. Genoeg CO2 in de buurt van je spieren en hersenen? Deuren gaan open, pakketjes worden afgeleverd. Te weinig CO2? De deuren blijven op slot. Je hebt genoeg zuurstof in je bloed, maar het zit vast in de vrachtwagen.
             </p>
+          </div>
+          <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mt-6">
+            <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-1">Interactief — het Bohr-effect</div>
+            <BohrEffect client:visible />
           </div>
         </div>
 
