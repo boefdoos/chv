@@ -37,7 +37,7 @@ export default function BohrEffect() {
       >
         {/* Bloedvat */}
         <rect x="0" y="124" width="500" height="62" rx="31" fill={CLR_VEIN} />
-        <text x="18" y="160" fontSize="13" fill="#a07060">bloed</text>
+        <text x="230" y="160" fontSize="13" fill="#a07060">bloed</text>
 
         {/* Hemoglobine */}
         <ellipse cx="148" cy="155" rx="60" ry="26" fill={CLR_HB} />
