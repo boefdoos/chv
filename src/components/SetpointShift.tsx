@@ -37,7 +37,7 @@ export default function SetpointShift() {
       </div>
 
       <svg
-        viewBox="0 0 480 215"
+        viewBox="0 0 480 222"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full max-w-[540px] mx-auto block"
         style={{ fontFamily: 'inherit' }}
@@ -136,7 +136,7 @@ export default function SetpointShift() {
 
         {/* Annotatie — onder de indicator-box, gecentreerd op jouw CO2-positie */}
         <text
-          x={co2X} y={206}
+          x={co2X} y={214}
           fontSize="11" textAnchor="middle"
           fill={isChv ? '#c4724a' : '#5a9870'}
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s', animation: 'spFade 0.4s ease both' }}
