@@ -37,7 +37,7 @@ export default function SetpointShift() {
       </div>
 
       <svg
-        viewBox="0 0 480 210"
+        viewBox="0 0 480 215"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full max-w-[540px] mx-auto block"
         style={{ fontFamily: 'inherit' }}
@@ -134,24 +134,15 @@ export default function SetpointShift() {
           style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s' }}
         >{isChv ? '≈ 30 mmHg' : '≈ 40 mmHg'}</text>
 
-        {/* Annotatie */}
-        {isChv && (
-          <g style={{ animation: 'spFade 0.5s ease 0.3s both' }}>
-            <text x={toX(36)} y={46} fontSize="11" fill="#c4724a" textAnchor="middle">
-              ↑ hersenstam ziet dit
-            </text>
-            <text x={toX(36)} y={59} fontSize="11" fill="#c4724a" textAnchor="middle">
-              als "te hoog"
-            </text>
-          </g>
-        )}
-        {!isChv && (
-          <g style={{ animation: 'spFade 0.5s ease 0.3s both' }}>
-            <text x={toX(40)} y={48} fontSize="12" fill="#5a9870" textAnchor="middle">
-              ✓ in balans
-            </text>
-          </g>
-        )}
+        {/* Annotatie — onder de indicator-box, gecentreerd op jouw CO2-positie */}
+        <text
+          x={co2X} y={206}
+          fontSize="11" textAnchor="middle"
+          fill={isChv ? '#c4724a' : '#5a9870'}
+          style={{ transition: 'x 0.6s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s', animation: 'spFade 0.4s ease both' }}
+        >
+          {isChv ? '↑ hersenstam ziet dit als \u201cte hoog\u201d' : '\u2713 setpoint en CO\u2082 zijn in evenwicht'}
+        </text>
       </svg>
 
       <div
