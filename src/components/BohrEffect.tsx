@@ -121,7 +121,7 @@ export default function BohrEffect() {
             y=20 tot y=118 — ruim en hoog
             Tekst bovenaan, O2-zone onderaan
         ════════════════════════════════ */}
-        <rect x="322" y="20" width="164" height="100" rx="10"
+        <rect x="322" y="4" width="164" height="100" rx="10"
           fill={isLaag ? '#f5f0eb' : '#eef4f0'}
           stroke={isLaag ? '#d8cfc8' : '#b0d8bc'}
           strokeWidth="1.5"
@@ -129,21 +129,21 @@ export default function BohrEffect() {
         />
 
         {/* Tekst boven in het blok */}
-        <text x="404" y="44" fontSize="10.5" textAnchor="middle"
+        <text x="404" y="28" fontSize="10.5" textAnchor="middle"
           fill={isLaag ? '#b0a090' : '#5a9870'} fontWeight="500"
           style={{ transition: 'fill 0.4s' }}>weefsel / cel</text>
-        <text x="404" y="62" fontSize="10" textAnchor="middle"
+        <text x="404" y="46" fontSize="10" textAnchor="middle"
           fill={isLaag ? '#c0b0a0' : '#7aaa8a'}
           style={{ transition: 'fill 0.4s' }}>
           {isLaag ? 'zuurstoftekort' : 'ontvangt O₂'}
         </text>
 
         {/* Scheidingslijn in blok */}
-        <line x1="336" y1="72" x2="472" y2="72" stroke={isLaag ? '#e0d8d0' : '#c0dcc8'} strokeWidth="1" style={{ transition: 'stroke 0.4s' }} />
+        <line x1="336" y1="56" x2="472" y2="56" stroke={isLaag ? '#e0d8d0' : '#c0dcc8'} strokeWidth="1" style={{ transition: 'stroke 0.4s' }} />
 
         {/* O2-zone in het blok — onderaan, aparte ruimte */}
         {/* 3 O2-bolletjes verschijnen hier bij normaal CO2 */}
-        {[{ x: 360, y: 95 }, { x: 404, y: 95 }, { x: 448, y: 95 }].map((p, i) => (
+        {[{ x: 360, y: 79 }, { x: 404, y: 79 }, { x: 448, y: 79 }].map((p, i) => (
           <g key={`o2weefsel-${i}`}
             style={{ opacity: isLaag ? 0 : 1, transition: `opacity 0.45s ease ${i * 80}ms` }}>
             <circle cx={p.x} cy={p.y} r="9" fill={CLR_O2} />
@@ -151,7 +151,7 @@ export default function BohrEffect() {
           </g>
         ))}
         {/* Placeholder cirkels (leeg) bij laag */}
-        {[{ x: 360, y: 95 }, { x: 404, y: 95 }, { x: 448, y: 95 }].map((p, i) => (
+        {[{ x: 360, y: 79 }, { x: 404, y: 79 }, { x: 448, y: 79 }].map((p, i) => (
           <g key={`o2weefsel-empty-${i}`}
             style={{ opacity: isLaag ? 1 : 0, transition: `opacity 0.35s ease ${i * 60}ms` }}>
             <circle cx={p.x} cy={p.y} r="9" fill="none" stroke="#d8cfc8" strokeWidth="1.5" strokeDasharray="3 2" />
