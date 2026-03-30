@@ -43,14 +43,14 @@ export default function BohrEffect() {
             BLOEDVAT (horizontale balk)
             y=130 tot y=175
         ════════════════════════════════ */}
-        <rect x="0" y="130" width="500" height="50" rx="25" fill={CLR_VEIN} />
-        <text x="18" y="160" fontSize="10" fill="#a07060">bloed</text>
+        <rect x="0" y="124" width="500" height="62" rx="31" fill={CLR_VEIN} />
+        <text x="18" y="158" fontSize="10" fill="#a07060">bloed</text>
 
         {/* ════════════════════════════════
             HEMOGLOBINE ELLIPS
             gecentreerd in bloedvat: cy=155
         ════════════════════════════════ */}
-        <ellipse cx="148" cy="155" rx="62" ry="28" fill={CLR_HB} />
+        <ellipse cx="148" cy="155" rx="60" ry="26" fill={CLR_HB} />
         <text x="148" y="151" fontSize="10.5" textAnchor="middle" fill="white" fontWeight="600">Hemo-</text>
         <text x="148" y="165" fontSize="10.5" textAnchor="middle" fill="white" fontWeight="600">globine</text>
 
