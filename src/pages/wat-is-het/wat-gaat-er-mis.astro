@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import StoryTimeline from '../../components/StoryTimeline.astro';
 import ViciousCircle from '../../components/ViciousCircle.tsx';
+import SetpointShift from '../../components/SetpointShift.tsx';
 ---
 
 <Base title="Wat gaat er mis bij chronische hyperventilatie?" description="Het setpoint in je hersenstam verschuift, je CO2 wordt structureel te laag, en je lichaam raakt vast in een vicieuze cirkel. Uitleg met het Bohr-effect en klachtenweb." activeNav="wat-is-het" canonical="/wat-is-het/wat-gaat-er-mis">
@@ -48,6 +49,10 @@ import ViciousCircle from '../../components/ViciousCircle.tsx';
           <p class="text-body text-sand-600">
             Het resultaat: je blijft de hele dag net iets te veel ademen. Niet zichtbaar, niet dramatisch. Maar genoeg om je CO2 structureel te laag te houden.
           </p>
+          <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mt-8">
+            <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-1">Interactief: het verschoven setpoint</div>
+            <SetpointShift client:visible />
+          </div>
 
         </div>
 
