@@ -98,21 +98,23 @@ export default function BohrEffect() {
           style={{ transition: 'stroke 0.5s, stroke-dasharray 0.3s' }}
         />
 
-        {/* Slot */}
-        <g transform="translate(258, 116)">
-          <rect x="-11" y="-11" width="22" height="22" rx="5"
+        {/* Slot — boven het bloedvat, prominenter */}
+        <g transform="translate(255, 100)">
+          <rect x="-15" y="-15" width="30" height="30" rx="7"
             fill={isLaag ? '#f0e8e4' : '#dceee2'}
             stroke={isLaag ? '#c8a8a0' : '#7aaa8a'}
-            strokeWidth="1.5"
+            strokeWidth="2"
             style={{ transition: 'fill 0.4s, stroke 0.4s' }}
           />
-          <rect x="-4.5" y="-1" width="9" height="7" rx="1.5"
+          {/* Slotlichaam */}
+          <rect x="-6" y="-1" width="12" height="9" rx="2"
             fill={isLaag ? '#c8a8a0' : '#7aaa8a'}
             style={{ transition: 'fill 0.4s' }}
           />
+          {/* Slotbeugel */}
           {isLaag
-            ? <path d="M-2.5 -1 Q-2.5 -7 0 -7 Q2.5 -7 2.5 -1" stroke="#c8a8a0" strokeWidth="2" fill="none" />
-            : <path d="M0 -1 Q0 -7 3 -7 Q6 -7 6 -3.5" stroke="#7aaa8a" strokeWidth="2" fill="none" />
+            ? <path d="M-3.5 -1 Q-3.5 -9 0 -9 Q3.5 -9 3.5 -1" stroke="#c8a8a0" strokeWidth="2.5" fill="none" />
+            : <path d="M0 -1 Q0 -9 4 -9 Q8 -9 8 -4.5" stroke="#7aaa8a" strokeWidth="2.5" fill="none" />
           }
         </g>
 
