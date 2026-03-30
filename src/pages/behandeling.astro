@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SurveyBanner from '../components/SurveyBanner.astro';
+import TreatmentSpectrum from '../components/TreatmentSpectrum.tsx';
 ---
 
 <Base title="Behandelopties" description="Overzicht van behandelingen voor chronische hyperventilatie: ademhalingsretraining, CGT, HRV-biofeedback, medicatie en experimentele benaderingen. Met bewijsniveaus." activeNav="behandeling" canonical="/behandeling">
@@ -33,6 +34,12 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         <p class="text-[14px] text-terra-400 leading-relaxed">
           Dit is een overzicht, geen medisch advies. Elk bewijsniveau is eerlijk vermeld. Bespreek behandelopties altijd met een arts of therapeut.
         </p>
+      </div>
+
+      <!-- Behandelspectrum -->
+      <div class="bg-sand-50 border border-sand-300 rounded-2xl p-6 md:p-8 mb-12 reveal">
+        <div class="text-[11px] font-medium uppercase tracking-wider text-sand-500 mb-4">Overzicht: van bewezen naar experimenteel</div>
+        <TreatmentSpectrum client:visible />
       </div>
 
       <!-- Eerstelijns: full width -->
