@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SurveyBanner from '../components/SurveyBanner.astro';
+import RecoveryCurve from '../components/RecoveryCurve.tsx';
 ---
 
 <Base title="Leven met chronische hyperventilatie" description="Hoe leg je chronische hyperventilatie uit aan je omgeving? Tips voor het dagelijks leven, de mentale kant, en lotgenotencontact." activeNav="leven-met-chv" canonical="/leven-met-chv">
@@ -91,7 +92,8 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         <div class="space-y-4 reveal reveal-delay-1">
           <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
             <div class="text-[14px] font-medium text-sand-700 mb-2">Verwacht geen lineair herstel</div>
-            <p class="text-[14px] text-sand-600 leading-relaxed">De meeste mensen ervaren schommelingen: goede en slechte periodes. Stress, slaapgebrek, of een verkoudheid kunnen een terugval geven. Dat is normaal en betekent niet dat je terug bij af bent.</p>
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-4">De meeste mensen ervaren schommelingen: goede en slechte periodes. Stress, slaapgebrek, of een verkoudheid kunnen een terugval geven. Dat is normaal en betekent niet dat je terug bij af bent.</p>
+            <RecoveryCurve client:visible />
           </div>
           <div class="p-5 rounded-xl bg-sand-50 border border-sand-300">
             <div class="text-[14px] font-medium text-sand-700 mb-2">Vermijd overmatige controle</div>
