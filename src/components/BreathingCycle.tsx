@@ -75,26 +75,29 @@ export default function BreathingCycle() {
 
       {/* Mobile: vertical */}
       <div className="md:hidden">
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col">
           {steps.map((step, i) => {
             const isActive = active === i;
             return (
               <div key={step.id}>
                 <div className="flex items-center gap-4">
-                  <div
-                    className="shrink-0 rounded-full flex items-center justify-center"
-                    style={{
-                      width: isActive ? 52 : 46,
-                      height: isActive ? 52 : 46,
-                      backgroundColor: step.color,
-                      transition: 'all 0.3s ease',
-                    }}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      {i === 0 && <path d="M12 19V5m0 0l-5 5m5-5l5 5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
-                      {i === 1 && <><circle cx="12" cy="12" r="6" fill="none" stroke={step.stroke} strokeWidth="1.5" /><path d="M12 8v4l2 2" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" /></>}
-                      {i === 2 && <path d="M12 5v14m0 0l-5-5m5 5l5-5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
-                    </svg>
+                  {/* Fixed-width circle column so connector stays aligned */}
+                  <div className="shrink-0 flex items-center justify-center" style={{ width: 52 }}>
+                    <div
+                      className="rounded-full flex items-center justify-center"
+                      style={{
+                        width: isActive ? 52 : 46,
+                        height: isActive ? 52 : 46,
+                        backgroundColor: step.color,
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        {i === 0 && <path d="M12 19V5m0 0l-5 5m5-5l5 5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
+                        {i === 1 && <><circle cx="12" cy="12" r="6" fill="none" stroke={step.stroke} strokeWidth="1.5" /><path d="M12 8v4l2 2" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" /></>}
+                        {i === 2 && <path d="M12 5v14m0 0l-5-5m5 5l5-5" fill="none" stroke={step.stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />}
+                      </svg>
+                    </div>
                   </div>
                   <div>
                     <div className="text-[15px] font-medium text-sand-700">{step.title}</div>
@@ -102,7 +105,7 @@ export default function BreathingCycle() {
                   </div>
                 </div>
                 {i < 2 && (
-                  <div className="flex justify-start ml-[23px] py-1">
+                  <div style={{ width: 52, display: 'flex', justifyContent: 'center', padding: '2px 0' }}>
                     <svg width="6" height="20" viewBox="0 0 6 20">
                       <line x1="3" y1="0" x2="3" y2="14" stroke="#c9b99a" strokeWidth="1.2" />
                       <path d="M1 12L3 16L5 12" fill="none" stroke="#c9b99a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
