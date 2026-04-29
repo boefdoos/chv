@@ -4,5 +4,5 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [react(), tailwind()],
-  site: 'https://chronischehyperventilatie.be',
+  site: 'https://www.chronische-hyperventilatie.be',
 });
