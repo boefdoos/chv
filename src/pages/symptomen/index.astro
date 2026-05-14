@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const symptoms = [
+  {
+    slug: 'veel-zuchten',
+    title: 'Veel zuchten',
+    description: 'Je zucht vaker dan anderen, zonder dat je weet waarom. Wat je lichaam je hiermee vertelt.',
+  },
+];
+---
+
+<Base
+  title="Symptomengids: veelvoorkomende klachten bij chronische hyperventilatie"
+  description="Herken je klachten en begrijp wat ze fysiologisch betekenen. Per symptoom: een heldere uitleg van het mechanisme, de link met CHV, en wat je ermee kan."
+>
+  <main class="max-w-3xl mx-auto px-6 py-16">
+
+    <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-3">Symptomengids</p>
+    <h1 class="font-serif text-h2 text-sand-700 mb-4">Wat vertelt jouw lichaam?</h1>
+    <p class="text-body text-sand-500 mb-12 max-w-xl">
+      Chronische hyperventilatie uit zich in een breed palet aan klachten — klachten die op het eerste gezicht weinig met de ademhaling te maken lijken te hebben. Per symptoom leggen we uit wat er fysiologisch speelt.
+    </p>
+
+    <ul class="space-y-4">
+      {symptoms.map(s => (
+        <li>
+          <a href={`/symptomen/${s.slug}/`} class="group block bg-sand-100 hover:bg-sand-200 rounded-xl p-6 transition-colors">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-1">Symptoom onder de loep</p>
+            <h2 class="font-serif text-h3 text-sand-700 group-hover:text-sage-400 transition-colors mb-2">{s.title}</h2>
+            <p class="text-small text-sand-500">{s.description}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+  </main>
+</Base>
