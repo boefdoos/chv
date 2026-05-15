@@ -11,17 +11,21 @@ const symptoms = [
 ---
 
 <Base
-  title="Symptomengids: klachten bij chronische hyperventilatie"
-  description="Per symptoom: de fysiologische verklaring, de link met chronische hyperventilatie, en wat het je vertelt. Wetenschappelijk onderbouwd, toegankelijk geschreven."
+  title="Herkenning: symptomen van chronische hyperventilatie"
+  description="Herken je symptomen en begrijp wat ze fysiologisch betekenen. Per symptoom: de mechanistische verklaring, de link met CHV, en wat het je vertelt."
 >
   <main class="max-w-3xl mx-auto px-6 py-16">
 
-    <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-3">Symptomengids</p>
+    <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-3">Herkenning</p>
     <h1 class="font-serif text-h2 text-sand-700 mb-4">Wat vertelt jouw lichaam?</h1>
+    <p class="text-body text-sand-500 mb-4 max-w-xl">
+      Chronische hyperventilatie heeft een breed spectrum aan symptomen. Sommige, zoals frequent zuchten of overmatig gapen, zijn direct herkenbaar als ademhalingsgerelateerd. Andere, zoals duizeligheid, hartkloppingen of concentratieproblemen, hebben een minder voor de hand liggende verbinding met de ademhaling.
+    </p>
     <p class="text-body text-sand-500 mb-12 max-w-xl">
-      Chronische hyperventilatie heeft een breed klachtenspectrum. Sommige klachten, zoals frequent zuchten of overmatig gapen, zijn direct herkenbaar als ademhalingsgerelateerd. Andere, zoals duizeligheid, hartkloppingen of concentratieproblemen, hebben een minder voor de hand liggende verbinding met de ademhaling. Per symptoom leggen we de fysiologische keten uit.
+      Per symptoom leggen we de fysiologische keten uit.
     </p>
 
+    <p class="text-xs font-medium tracking-widest uppercase text-sand-400 mb-4">Symptomen onder de loep</p>
     <ul class="space-y-4">
       {symptoms.map(s => (
         <li>
