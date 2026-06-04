@@ -42,6 +42,9 @@ const fullTitle = title === 'Home' ? 'Chronische Hyperventilatie | Wetenschappel
   <meta name="robots" content="index, follow" />
   <meta name="language" content="nl-BE" />
   <link rel="sitemap" href="/sitemap.xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
@@ -69,8 +72,9 @@ const fullTitle = title === 'Home' ? 'Chronische Hyperventilatie | Wetenschappel
 </head>
 <body>
   <nav class="max-w-[1200px] mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
-    <a href="/" class="font-serif text-[17px] text-sand-700 no-underline">
-      Chronische Hyperventilatie
+    <a href="/" class="no-underline flex items-center gap-2.5">
+      <img src="/logo.png" alt="Chronische Hyperventilatie" class="h-9 w-auto" />
+      <span class="font-serif text-[17px] text-sand-700">Chronische Hyperventilatie</span>
     </a>
     <!-- Hamburger button -->
     <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer">
