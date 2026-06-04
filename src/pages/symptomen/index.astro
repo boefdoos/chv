@@ -5,22 +5,22 @@ const symptoms = [
   {
     slug: 'veel-zuchten',
     title: 'Veel zuchten',
-    description: 'Frequenter zuchten dan gemiddeld is een van de vroegste signalen van een verstoorde adembalans. De fysiologische verklaring is preciezer dan je zou verwachten.',
+    description: 'Een overactief resetmechanisme van de longen dat zichzelf in stand houdt.',
   },
   {
     slug: 'gapen',
     title: 'Overmatig gapen',
-    description: 'Gapen zonder slaperig te zijn is een onderschat maar herkenbaar signaal. Het deelt zijn mechanisme met frequent zuchten, maar heeft een eigen sociale dimensie.',
+    description: 'Hetzelfde mechanisme als zuchten, met een eigen sociale dimensie.',
   },
   {
     slug: 'luchthonger',
     title: 'Niet diep genoeg kunnen ademen',
-    description: 'Elke inademing voelt net iets tekort. Het is geen mechanisch probleem, maar een zintuiglijk fenomeen met een naam: luchthonger.',
+    description: 'Geen mechanisch probleem. Een zintuiglijk fenomeen met een naam: luchthonger.',
   },
   {
     slug: 'hartkloppingen',
     title: 'Hartkloppingen',
-    description: 'Hartkloppingen zonder cardiale oorzaak zijn een klassiek symptoom van chronische hyperventilatie. Drie fysiologische mechanismen verklaren waarom.',
+    description: 'Drie fysiologische mechanismen verklaren hartkloppingen zonder cardiale oorzaak.',
   },
 ];
 ---
@@ -61,20 +61,20 @@ const symptoms = [
         Elk symptoom in deze gids wordt mechanistisch uitgelegd: wat er fysiologisch speelt, waarom het bij chronische hyperventilatie zo hardnekkig aanwezig is, en wat het je vertelt.
       </p>
 
-      <!-- Symptomenlijst -->
+      <!-- Symptomenraster -->
       <p class="text-xs font-medium tracking-widest uppercase text-sand-400 mb-4">Symptomen onder de loep</p>
-      <ul class="space-y-4">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {symptoms.map(s => (
           <li>
-            <a href={`/symptomen/${s.slug}/`} class="group block bg-sage-50 hover:bg-sage-100 border border-sage-200 hover:border-sage-300 rounded-2xl p-8 transition-all no-underline">
-              <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-2">Symptoom onder de loep</p>
-              <div class="flex items-start justify-between gap-6">
-                <div>
-                  <h2 class="font-serif text-[22px] font-normal text-sand-700 group-hover:text-sage-500 transition-colors mb-3">{s.title}</h2>
-                  <p class="text-[15px] text-sand-600 leading-relaxed">{s.description}</p>
-                </div>
-                <div class="w-10 h-10 min-w-[40px] rounded-full bg-sage-200 group-hover:bg-sage-300 flex items-center justify-center transition-colors mt-1">
-                  <svg class="w-4 h-4 text-sage-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <a href={`/symptomen/${s.slug}/`} class="group flex flex-col justify-between h-full bg-sage-50 hover:bg-sage-100 border border-sage-200 hover:border-sage-300 rounded-2xl p-6 transition-all no-underline min-h-[160px]">
+              <div>
+                <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-2">Symptoom</p>
+                <h2 class="font-serif text-[18px] font-normal text-sand-700 group-hover:text-sage-500 transition-colors mb-3 leading-snug">{s.title}</h2>
+                <p class="text-[13px] text-sand-500 leading-relaxed">{s.description}</p>
+              </div>
+              <div class="flex justify-end mt-4">
+                <div class="w-8 h-8 rounded-full bg-sage-200 group-hover:bg-sage-300 flex items-center justify-center transition-colors">
+                  <svg class="w-3.5 h-3.5 text-sage-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                     <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                   </svg>
                 </div>
