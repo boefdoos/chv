@@ -1,12 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const symptoms = [
-  { slug: 'veel-zuchten',   title: 'Veel zuchten',                   label: 'Ademhaling' },
-  { slug: 'luchthonger',    title: 'Niet diep genoeg kunnen ademen', label: 'Ademhaling' },
-  { slug: 'hartkloppingen', title: 'Hartkloppingen',                 label: 'Cardiovasculair' },
-  { slug: 'gapen',          title: 'Overmatig gapen',                label: 'Ademhaling' },
-];
 ---
 
 <Base
@@ -17,13 +10,11 @@ const symptoms = [
 
   <!-- Hero -->
   <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 md:pt-[72px] pb-16 relative">
-    <!-- Decoratieve shapes: absoluut tov de buitenste container -->
     <div class="hidden lg:block absolute right-12 top-20 w-[340px] h-[340px] opacity-70 pointer-events-none">
       <div class="absolute w-[280px] h-[280px] rounded-full border border-sand-300 top-[30px] right-0 animate-drift"></div>
       <div class="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-sage-50 top-0 right-[100px] animate-drift [animation-direction:reverse]"></div>
       <div class="absolute w-[100px] h-[100px] rounded-full bg-sage-50 top-[140px] right-[40px] animate-breathe"></div>
     </div>
-    <!-- Hero-inhoud: zelfde centering als rest van de site -->
     <div class="max-w-[720px] mx-auto">
       <h1 class="font-serif text-hero font-light text-sand-700 mb-6 max-w-[560px]">
         Je ademt, maar het voelt <em class="italic font-normal">niet goed</em>
@@ -31,38 +22,9 @@ const symptoms = [
       <p class="text-[17px] leading-[1.8] text-sand-600 mb-4 max-w-[520px]">
         Je zucht diep maar de opluchting komt niet. Je gaapt de hele dag maar je bent niet moe. Je voelt dat je niet genoeg lucht krijgt, terwijl er niets mis is met je longen.
       </p>
-      <p class="text-[17px] leading-[1.8] text-sand-600 mb-8 max-w-[520px]">
+      <p class="text-[17px] leading-[1.8] text-sand-600 max-w-[520px]">
         Misschien heb je al tientallen onderzoeken gehad. Alles normaal. En toch klopt er iets niet.
       </p>
-      <a href="/symptomen/" class="inline-flex items-center gap-2 px-7 py-3 bg-sage-300 text-white text-sm font-medium rounded-lg no-underline hover:bg-sage-400 transition-colors">
-        Herken je dit?
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- Symptomen -->
-  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pb-20">
-    <div class="max-w-[720px] mx-auto">
-      <p class="text-xs font-medium tracking-widest uppercase text-sand-400 mb-4">Veelvoorkomende signalen</p>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        {symptoms.map(s => (
-          <li>
-            <a href={`/symptomen/${s.slug}/`} class="group flex flex-col justify-between h-full bg-white hover:bg-sage-50 border border-sand-200 hover:border-sage-300 rounded-2xl p-6 transition-all no-underline min-h-[120px]">
-              <div>
-                <p class="text-xs font-medium tracking-widest uppercase text-sage-300 mb-2">{s.label}</p>
-                <h2 class="font-serif text-[17px] font-normal text-sand-700 group-hover:text-sage-500 transition-colors leading-snug">{s.title}</h2>
-              </div>
-              <div class="flex justify-end mt-4">
-                <div class="w-7 h-7 rounded-full bg-sage-100 group-hover:bg-sage-200 flex items-center justify-center transition-colors">
-                  <svg class="w-3 h-3 text-sage-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </div>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <a href="/symptomen/" class="text-[13px] text-sage-300 hover:underline no-underline">Alle symptomen bekijken ↗</a>
     </div>
   </div>
 
@@ -92,6 +54,19 @@ const symptoms = [
           </a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Herkenning -->
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pb-20">
+    <div class="max-w-[720px] mx-auto">
+      <p class="text-body text-sand-600 mb-3">
+        Chronische hyperventilatie uit zich in een breed spectrum aan symptomen, van frequent zuchten en luchthonger tot hartkloppingen en concentratieproblemen.
+      </p>
+      <a href="/symptomen/" class="inline-flex items-center gap-1.5 text-[14px] text-sage-300 no-underline hover:underline">
+        Bekijk de symptomengids
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 
