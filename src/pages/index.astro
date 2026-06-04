@@ -16,15 +16,22 @@ const symptoms = [
 >
 
   <!-- Hero -->
-  <section class="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 md:pt-[72px] pb-16 relative">
-    <div class="max-w-[580px]">
-      <h1 class="font-serif text-hero font-light text-sand-700 mb-6">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-16 md:pt-[72px] pb-16 relative">
+    <!-- Decoratieve shapes: absoluut tov de buitenste container -->
+    <div class="hidden lg:block absolute right-12 top-20 w-[340px] h-[340px] opacity-70 pointer-events-none">
+      <div class="absolute w-[280px] h-[280px] rounded-full border border-sand-300 top-[30px] right-0 animate-drift"></div>
+      <div class="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-sage-50 top-0 right-[100px] animate-drift [animation-direction:reverse]"></div>
+      <div class="absolute w-[100px] h-[100px] rounded-full bg-sage-50 top-[140px] right-[40px] animate-breathe"></div>
+    </div>
+    <!-- Hero-inhoud: zelfde centering als rest van de site -->
+    <div class="max-w-[720px] mx-auto">
+      <h1 class="font-serif text-hero font-light text-sand-700 mb-6 max-w-[560px]">
         Je ademt, maar het voelt <em class="italic font-normal">niet goed</em>
       </h1>
-      <p class="text-[17px] leading-[1.8] text-sand-600 mb-4">
+      <p class="text-[17px] leading-[1.8] text-sand-600 mb-4 max-w-[520px]">
         Je zucht diep maar de opluchting komt niet. Je gaapt de hele dag maar je bent niet moe. Je voelt dat je niet genoeg lucht krijgt, terwijl er niets mis is met je longen.
       </p>
-      <p class="text-[17px] leading-[1.8] text-sand-600 mb-8">
+      <p class="text-[17px] leading-[1.8] text-sand-600 mb-8 max-w-[520px]">
         Misschien heb je al tientallen onderzoeken gehad. Alles normaal. En toch klopt er iets niet.
       </p>
       <a href="/symptomen/" class="inline-flex items-center gap-2 px-7 py-3 bg-sage-300 text-white text-sm font-medium rounded-lg no-underline hover:bg-sage-400 transition-colors">
@@ -32,12 +39,7 @@ const symptoms = [
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-    <div class="hidden lg:block absolute right-12 top-20 w-[340px] h-[340px] opacity-70">
-      <div class="absolute w-[280px] h-[280px] rounded-full border border-sand-300 top-[30px] right-0 animate-drift"></div>
-      <div class="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-sage-50 top-0 right-[100px] animate-drift [animation-direction:reverse]"></div>
-      <div class="absolute w-[100px] h-[100px] rounded-full bg-sage-50 top-[140px] right-[40px] animate-breathe"></div>
-    </div>
-  </section>
+  </div>
 
   <!-- Symptomen -->
   <div class="max-w-[1200px] mx-auto px-6 md:px-12 pb-20">
