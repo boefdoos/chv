@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -69,6 +71,7 @@ const fullTitle = title === 'Home' ? 'Chronische Hyperventilatie | Wetenschappel
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <Analytics />
 </head>
 <body>
   <nav class="max-w-[1200px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between min-h-[80px]">
