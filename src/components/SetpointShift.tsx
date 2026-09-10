@@ -86,7 +86,7 @@ export default function SetpointShift() {
           </g>
         ))}
         <text x={scaleX + scaleW / 2} y={130} fontSize="11" textAnchor="middle" fill="#a09080">
-          CO2 in bloed (mmHg)
+          CO₂ in bloed (mmHg)
         </text>
 
         {/* Setpoint-streep */}
@@ -96,12 +96,12 @@ export default function SetpointShift() {
           style={{ transition: 'x1 0.7s cubic-bezier(0.34,1.1,0.64,1), x2 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         <rect
-          x={setpointX - 42} y={22} width={84} height={20} rx="4"
+          x={setpointX - 58} y={20} width={116} height={22} rx="4"
           fill="#f0e8e0" stroke="#c8b8a8" strokeWidth="1"
           style={{ transition: 'x 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         <text
-          x={setpointX} y={36} fontSize="11.5" textAnchor="middle" fill="#7a6a5a" fontWeight="600"
+          x={setpointX} y={35} fontSize="11.5" textAnchor="middle" fill="#7a6a5a" fontWeight="600"
           style={{ transition: 'x 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         >setpoint: {setpointVal} mmHg</text>
 
