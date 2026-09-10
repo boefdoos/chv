@@ -141,7 +141,7 @@ export default function SetpointShift() {
           x={co2X} y={180} fontSize="11.5" textAnchor="middle"
           fill={isChv ? '#a05030' : '#3a8050'} fontWeight="600"
           style={{ transition: 'x 0.7s cubic-bezier(0.34,1.1,0.64,1), fill 0.4s' }}
-        >jouw CO2</text>
+        >jouw CO₂</text>
         <text
           x={co2X} y={196} fontSize="11" textAnchor="middle"
           fill={isChv ? warnFill : safeFill}
@@ -155,8 +155,8 @@ export default function SetpointShift() {
           style={{ transition: 'fill 0.4s', animation: 'spFade 0.4s ease both' }}
         >
           {isChv
-            ? '35 mmHg valt al in de alarmzone: hersenstam geeft signaal meer ademen'
-            : 'setpoint en CO2 zijn in evenwicht'}
+            ? '35 mmHg valt al in de alarmzone: hersenstam geeft signaal om meer te ademen'
+            : 'setpoint en CO₂ zijn in evenwicht'}
         </text>
       </svg>
 
@@ -168,8 +168,8 @@ export default function SetpointShift() {
         style={{ animation: 'spFade 0.35s ease both' }}
       >
         {isChv
-          ? 'Het setpoint is verschoven naar 30 mmHg. Zelfs CO2 van 35, ruim onder het gezonde niveau van 40, valt al in de alarmzone. Normaal CO2 voelt voor dit systeem als te veel.'
-          : 'Het setpoint staat op 40 mmHg. CO2 en setpoint zijn in evenwicht. De hersenstam is tevreden.'}
+          ? 'Het setpoint is verschoven naar 30 mmHg. Zelfs CO₂ van 35 mmHg, ruim onder het gezonde niveau van 40, valt al in de alarmzone. Normaal CO₂ voelt voor dit systeem als te veel.'
+          : 'Het setpoint staat op 40 mmHg. CO₂ en setpoint zijn in evenwicht. De hersenstam is tevreden.'}
       </div>
 
       <style>{`
