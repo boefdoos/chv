@@ -18,13 +18,13 @@ import SurveyBanner from '../components/SurveyBanner.astro';
   </div>
 
   <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-8 pb-20">
-    <div class="max-w-[920px] mx-auto">
+    <div class="max-w-[720px] mx-auto">
 
       <!-- Intro -->
       <div class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
         <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
         <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
-          Chronische hyperventilatie is behandelbaar. De meeste aanpakken richten zich op hetzelfde doel: je adempatroon herstellen zodat je CO2-niveau weer normaliseert. Welke aanpak het beste werkt, verschilt per persoon.
+          Chronische hyperventilatie is behandelbaar. De meeste aanpakken richten zich op hetzelfde doel: je adempatroon herstellen zodat je CO₂-niveau weer normaliseert. Welke aanpak het beste werkt, verschilt per persoon.
         </p>
       </div>
 
@@ -35,16 +35,16 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         </p>
       </div>
 
-      <!-- Eerstelijns: full width -->
+      <!-- Eerstelijns aanpak -->
       <h2 class="font-serif text-h3 font-normal mb-6 reveal">Eerstelijns aanpak</h2>
 
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-6 reveal">
+      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-12 reveal">
         <div class="flex items-start justify-between gap-4 mb-3">
           <h3 class="font-serif text-[20px] font-normal">Ademhalingsretraining</h3>
           <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Sterk bewijs</span>
         </div>
         <p class="text-[15px] text-sand-600 mb-2 leading-relaxed">
-          De eerste keus. Een therapeut leert je een rustiger adempatroon aan: langzamer, via het middenrif, door de neus. Het doel is niet ontspanning maar het herstellen van je CO2-balans.
+          De eerste keus. Een therapeut leert je een rustiger adempatroon aan: langzamer, via het middenrif, door de neus. Het doel is niet ontspanning maar het herstellen van je CO₂-balans.
         </p>
         <p class="text-[13px] text-sand-500">
           BREATHE-trial (Thomas et al., 2017): verbeterde kwaliteit van leven tot 12 maanden, n=655 (astma + hyperventilatieklachten).
@@ -54,183 +54,236 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         </div>
       </div>
 
-      <!-- Twee kolommen -->
-      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Gerichte methoden</h2>
+      <!-- Gerichte methoden -->
+      <h2 class="font-serif text-h3 font-normal mb-3 reveal">Gerichte methoden</h2>
+      <p class="text-[14px] text-sand-500 mb-5 reveal">Aanpakken die zich richten op een specifiek mechanisme binnen chronische hyperventilatie.</p>
 
-      <!-- Capnografie: eerste gerichte methode, mechanistisch meest precies -->
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-4 reveal">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <div>
-            <h3 class="font-serif text-[20px] font-normal">Capnografie-gestuurd ademretraining</h3>
-            <p class="text-[12px] text-sand-500 mt-0.5 italic">Meest mechanistisch gerichte aanpak</p>
-          </div>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap shrink-0">Opkomend</span>
-        </div>
-        <p class="text-[15px] text-sand-600 mb-3 leading-relaxed">
-          De enige methode die tijdens de training real-time het CO₂-niveau meet. Je ziet direct wat je adempatroon doet met je CO₂ en past bij op basis van wat de capnometer toont. Daarmee is het de meest gerichte aanpak: je traint niet op gevoel maar op meting.
-        </p>
-        <p class="text-[13px] text-sand-500 mb-2">
-          De CALM-studie (Norweg et al., 2025) toonde goede haalbaarheid en patiëntacceptatie. Grote RCTs ontbreken nog. De mechanistische onderbouwing is sterk: als het doel is het CO₂-setpoint te normaliseren, is real-time CO₂-feedback de meest directe weg.
-        </p>
-        <p class="text-[12px] text-sand-400 italic">Beperkt beschikbaar in de reguliere zorg. Capnometers zijn beschikbaar voor thuisgebruik (LoFlo, Freespira) maar duur.</p>
-      </div>
+      <div class="space-y-2 mb-12">
 
-      <div class="grid md:grid-cols-2 gap-4 mb-6">
-        <!-- Buteyko -->
-        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-300 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal">Buteyko-methode</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+        <!-- Capnografie -->
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <div>
+              <span class="font-serif text-[17px] font-normal text-sand-700">Capnografie-gestuurd ademretraining</span>
+              <span class="ml-2 text-[11px] text-sand-400 italic">meest mechanistisch gericht</span>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Opkomend</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-3">
+              De enige methode die tijdens de training real-time het CO₂-niveau meet. Je ziet direct wat je adempatroon doet met je CO₂ en past bij op basis van wat de capnometer toont. Daarmee is het de meest gerichte aanpak: je traint niet op gevoel maar op meting.
+            </p>
+            <p class="text-[13px] text-sand-500 mb-2">
+              De CALM-studie (Norweg et al., 2025) toonde goede haalbaarheid en patiëntacceptatie. Grote RCTs ontbreken nog. De mechanistische onderbouwing is sterk: als het doel is het CO₂-setpoint te normaliseren, is real-time CO₂-feedback de meest directe weg.
+            </p>
+            <p class="text-[12px] text-sand-400 italic">Beperkt beschikbaar in de reguliere zorg. Capnometers zijn beschikbaar voor thuisgebruik (LoFlo, Freespira) maar duur.</p>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Bewust minder ademen, neusademing, en regelmatige ademinhoudingen. Je CO2 stijgt geleidelijk, en je chemoreceptoren wennen aan een normaler niveau. Gebruikt de "Control Pause" als meetinstrument.
-          </p>
-          <p class="text-[12px] text-sand-500 mb-2">Kleine studies tonen verbetering bij astma, grote RCTs ontbreken. De bredere theorie van Buteyko (150+ aandoeningen door hyperventilatie) gaat verder dan het bewijs ondersteunt.</p>
-          <p class="text-[12px] text-sand-400 italic">Het principe van gecontroleerde CO2-verhoging bij patiënten met aangetoonde hypocapnie staat los van de ideologische overdrijving in de oorspronkelijke Buteyko-theorie.</p>
-        </div>
+        </details>
 
         <!-- CGT -->
-        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-300 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal">Cognitieve gedragstherapie</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-sand-700">Cognitieve gedragstherapie</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Richt zich op de angst en gedachtenpatronen die hyperventilatie versterken. Helpt om minder catastroferend te reageren op ademhalingssensaties en vermijding te doorbreken.
+            </p>
+            <p class="text-[12px] text-sand-500">Sterk bewijs bij angst en paniekstoornis. Voor CHV als primaire ademstoornis zonder sterke angstcomponent is het bewijs beperkter. Meest effectief wanneer angst een duidelijke rol speelt in de instandhouding.</p>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Richt zich op de angst en gedachtenpatronen die hyperventilatie versterken. Helpt om minder catastroferend te reageren op ademhalingssensaties en vermijding te doorbreken.
-          </p>
-          <p class="text-[12px] text-sand-500">Sterk bewijs bij angst en paniekstoornis. Voor CHV als primaire ademstoornis zonder sterke angstcomponent is het bewijs beperkter. Meest effectief wanneer angst een duidelijke rol speelt in de instandhouding.</p>
-        </div>
+        </details>
 
-        <!-- HRV biofeedback -->
-        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-300 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal">HRV-biofeedback</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
+        <!-- HRV-biofeedback -->
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-sand-700">HRV-biofeedback</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Langzaam ademen (~5-6/min) terwijl je je hartritmevariabiliteit op een scherm ziet. Versterkt de nervus vagus en herstelt de balans tussen spanning en ontspanning. Vooral effectief als stress een grote rol speelt.
+            </p>
+            <p class="text-[12px] text-sand-500">Groeiend bewijs bij angst en pijn, beperkt specifiek voor CHV.</p>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Langzaam ademen (~5-6/min) terwijl je je hartritme-variabiliteit op een scherm ziet. Versterkt de nervus vagus en herstelt de balans tussen spanning en ontspanning. Vooral effectief als stress een grote rol speelt.
-          </p>
-          <p class="text-[12px] text-sand-500">Groeiend bewijs bij angst en pijn, beperkt specifiek voor CHV.</p>
-        </div>
+        </details>
+
+        <!-- Buteyko -->
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-sand-700">Buteyko-methode</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Bewust minder ademen, neusademing, en regelmatige ademinhoudingen. Je CO₂ stijgt geleidelijk, en je chemoreceptoren wennen aan een normaler niveau. Gebruikt de "Control Pause" als meetinstrument.
+            </p>
+            <p class="text-[12px] text-sand-500 mb-2">Kleine studies tonen verbetering bij astma, grote RCTs ontbreken. De bredere theorie van Buteyko (150+ aandoeningen door hyperventilatie) gaat verder dan het bewijs ondersteunt.</p>
+            <p class="text-[12px] text-sand-400 italic">Het principe van gecontroleerde CO₂-verhoging bij patiënten met aangetoonde hypocapnie staat los van de ideologische overdrijving in de oorspronkelijke Buteyko-theorie.</p>
+          </div>
+        </details>
 
       </div>
 
-      <!-- Medicatie en levensstijl: full width blocks -->
-      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Medicatie</h2>
+      <!-- Medicatie -->
+      <h2 class="font-serif text-h3 font-normal mb-5 reveal">Medicatie en levensstijl</h2>
 
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-6 reveal">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <h3 class="font-serif text-[20px] font-normal">Ondersteunende medicatie</h3>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap shrink-0">Beperkt bewijs</span>
-        </div>
-        <p class="text-[15px] text-sand-600 mb-4 leading-relaxed">
-          Er is geen medicijn specifiek voor CHV. Wel worden soms middelen ingezet die indirect helpen. Medicatie is nooit de enige behandeling.
-        </p>
-        <div class="grid md:grid-cols-3 gap-3 mb-3">
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Tricyclische antidepressiva</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Laag gedoseerd (bv. amitriptyline 10mg) soms effectief. Geen RCTs, wel positieve patientervaringen.</p>
-          </div>
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">SSRI's</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Helpen bij angstcomponent, niet bij de hyperventilatie zelf.</p>
-          </div>
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Benzodiazepines</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Dempen acute paniek, werken niet op chronische ademklachten. Risico op afhankelijkheid.</p>
-          </div>
-        </div>
-        <p class="text-[12px] text-sand-500">Voorschrijver: huisarts, psychiater.</p>
-      </div>
+      <div class="space-y-2 mb-12">
 
-<!-- Levensstijl: full width -->
-      <h2 class="font-serif text-h3 font-normal mb-6 mt-12 reveal">Levensstijl</h2>
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-sand-700">Ondersteunende medicatie</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap">Beperkt bewijs</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <p class="text-[14px] text-sand-600 mb-4 leading-relaxed">
+              Er is geen medicijn specifiek voor CHV. Wel worden soms middelen ingezet die indirect helpen. Medicatie is nooit de enige behandeling.
+            </p>
+            <div class="grid md:grid-cols-3 gap-3 mb-3">
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">Tricyclische antidepressiva</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Laag gedoseerd (bv. amitriptyline 10mg) soms effectief. Geen RCTs, wel positieve patiëntervaringen.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">SSRI's</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Helpen bij angstcomponent, niet bij de hyperventilatie zelf.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">Benzodiazepines</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Dempen acute paniek, werken niet op chronische ademklachten. Risico op afhankelijkheid.</p>
+              </div>
+            </div>
+            <p class="text-[12px] text-sand-500">Voorschrijver: huisarts, psychiater.</p>
+          </div>
+        </details>
 
-      <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-12 reveal">
-        <div class="flex items-start justify-between gap-4 mb-3">
-          <h3 class="font-serif text-[20px] font-normal">Aanpassingen die kunnen helpen</h3>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs</span>
-        </div>
-        <div class="grid md:grid-cols-3 gap-3">
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Lichaamsbeweging</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Kan CO2-productie verhogen. Helpt voor sommigen, maar kan bij ernstige hypocapnie ook klachten uitlokken door snellere spierverzouring.</p>
+        <details class="group border border-sand-200 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-sand-50 hover:bg-sage-50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-sand-700">Levensstijlaanpassingen</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig bewijs</span>
+              <svg class="w-4 h-4 text-sand-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-sand-200">
+            <div class="grid md:grid-cols-3 gap-3">
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">Lichaamsbeweging</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Kan CO₂-productie verhogen. Helpt voor sommigen, maar kan bij ernstige hypocapnie ook klachten uitlokken door snellere spierverzouring.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">Cafeïne verminderen</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Stimuleert zenuwstelsel, kan klachten verergeren.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-sand-300">
+                <div class="text-[13px] font-medium text-sand-700">Slaaphygiëne</div>
+                <p class="text-[12px] text-sand-500 mt-0.5">Slechte slaap versterkt stressreacties en ontregelt adempatroon.</p>
+              </div>
+            </div>
           </div>
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Cafeine verminderen</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Stimuleert zenuwstelsel, kan klachten verergeren.</p>
-          </div>
-          <div class="pl-3 border-l-2 border-sand-300">
-            <div class="text-[13px] font-medium text-sand-700">Slaaphygiene</div>
-            <p class="text-[12px] text-sand-500 mt-0.5">Slechte slaap versterkt stressreacties en ontregelt adempatroon.</p>
-          </div>
-        </div>
+        </details>
+
       </div>
 
       <!-- Veelbelovende ontwikkelingen -->
-      <h2 class="font-serif text-h3 font-normal mb-4 mt-12 reveal">Veelbelovende ontwikkelingen</h2>
-      <p class="text-body text-sand-600 mb-6 reveal">
-        De volgende aanpakken zijn nog experimenteel of hebben beperkt bewijs, maar de mechanistische basis is interessant genoeg om in de gaten te houden.
-      </p>
+      <h2 class="font-serif text-h3 font-normal mb-3 reveal">Veelbelovende ontwikkelingen</h2>
+      <p class="text-[14px] text-sand-500 mb-5 reveal">Nog experimenteel of met beperkt bewijs, maar mechanistisch interessant genoeg om in de gaten te houden.</p>
 
-      <div class="grid md:grid-cols-2 gap-4 mb-12">
-        <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Vagus nerve stimulatie</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
-          </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Niet-invasieve stimulatie van de nervus vagus via een apparaatje op het oor of de hals. Activeert het parasympathische zenuwstelsel. Groeiend bewijs bij angst en depressie, maar nog geen studies specifiek bij chronische hyperventilatie.
-          </p>
-          <p class="text-[12px] text-sand-500">Consumer-apparaten beschikbaar (tVNS), maar klinische validatie voor CHV ontbreekt.</p>
-        </div>
+      <div class="space-y-2 mb-12">
 
-        <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Verkennende medicatie</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
-          </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-3">
-            De gangbare medicatie bij CHV (SSRI's, benzodiazepines) is ontwikkeld voor angststoornissen, niet voor ademregulatie. Recente inzichten wijzen op middelen die specifieker ingrijpen op de hersenstam en het autonome zenuwstelsel. Geen van deze middelen is geregistreerd voor CHV.
-          </p>
-          <div class="space-y-1.5 mb-2">
-            <div class="pl-3 border-l-2 border-plum-100">
-              <div class="text-[12px] font-medium text-sand-700">Alpha-2 agonisten (clonidine, guanfacine)</div>
-              <p class="text-[11px] text-sand-500 mt-0.5">Dempen sympathische overactivatie en verbreden de CO2-reserve. Clonidine verlaagde in een RCT de gevoeligheid voor hypocapnie. Guanfacine is beter verdraagbaar voor dagelijks gebruik.</p>
+        <details class="group border border-plum-100 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-plum-50 hover:bg-plum-100/50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-plum-400">Vagus nerve stimulatie</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap">Experimenteel</span>
+              <svg class="w-4 h-4 text-plum-300 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
-            <div class="pl-3 border-l-2 border-plum-100">
-              <div class="text-[12px] font-medium text-sand-700">Low-dose naltrexone (LDN)</div>
-              <p class="text-[11px] text-sand-500 mt-0.5">Versterkt het eigen opioidsysteem dat luchthonger onderdrukt. Veilig, goedkoop, beschikbaar via magistraal recept.</p>
-            </div>
-            <div class="pl-3 border-l-2 border-plum-100">
-              <div class="text-[12px] font-medium text-sand-700">Neurosteroiden (zuranolone)</div>
-              <p class="text-[11px] text-sand-500 mt-0.5">Versterken tonische remming in ademhalingscentra via receptoren die benzodiazepines niet bereiken. Kan verklaren waarom benzodiazepines bij CHV falen.</p>
-            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-plum-100">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Niet-invasieve stimulatie van de nervus vagus via een apparaatje op het oor of de hals. Activeert het parasympathische zenuwstelsel. Groeiend bewijs bij angst en depressie, maar nog geen studies specifiek bij chronische hyperventilatie.
+            </p>
+            <p class="text-[12px] text-sand-500">Consumer-apparaten beschikbaar (tVNS), maar klinische validatie voor CHV ontbreekt.</p>
           </div>
-          <p class="text-[12px] text-sand-500">Mechanistisch onderbouwd. Geen klinische trials voor CHV. Bespreek met een arts die openstaat voor off-label overwegingen.</p>
-        </div>
+        </details>
 
-        <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Deep brain stimulation</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
+        <details class="group border border-plum-100 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-plum-50 hover:bg-plum-100/50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-plum-400">Verkennende medicatie</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap">Experimenteel</span>
+              <svg class="w-4 h-4 text-plum-300 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-plum-100">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-3">
+              De gangbare medicatie bij CHV (SSRI's, benzodiazepines) is ontwikkeld voor angststoornissen, niet voor ademregulatie. Recente inzichten wijzen op middelen die specifieker ingrijpen op de hersenstam en het autonome zenuwstelsel. Geen van deze middelen is geregistreerd voor CHV.
+            </p>
+            <div class="space-y-1.5 mb-2">
+              <div class="pl-3 border-l-2 border-plum-100">
+                <div class="text-[12px] font-medium text-sand-700">Alpha-2 agonisten (clonidine, guanfacine)</div>
+                <p class="text-[11px] text-sand-500 mt-0.5">Dempen sympathische overactivatie en verbreden de CO₂-reserve. Clonidine verlaagde in een RCT de gevoeligheid voor hypocapnie. Guanfacine is beter verdraagbaar voor dagelijks gebruik.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-plum-100">
+                <div class="text-[12px] font-medium text-sand-700">Low-dose naltrexone (LDN)</div>
+                <p class="text-[11px] text-sand-500 mt-0.5">Versterkt het eigen opioidsysteem dat luchthonger onderdrukt. Veilig, goedkoop, beschikbaar via magistraal recept.</p>
+              </div>
+              <div class="pl-3 border-l-2 border-plum-100">
+                <div class="text-[12px] font-medium text-sand-700">Neurosteroïden (zuranolone)</div>
+                <p class="text-[11px] text-sand-500 mt-0.5">Versterken tonische remming in ademhalingscentra via receptoren die benzodiazepines niet bereiken. Kan verklaren waarom benzodiazepines bij CHV falen.</p>
+              </div>
+            </div>
+            <p class="text-[12px] text-sand-500">Mechanistisch onderbouwd. Geen klinische trials voor CHV. Bespreek met een arts die openstaat voor off-label overwegingen.</p>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Een Oxford-studie (Chapman et al., 2024) toonde dat stimulatie van de motorthalamus het gevoel van luchthonger kan verminderen. Dit is de eerste aanwijzing dat luchthonger via neurale paden beinvloed kan worden.
-          </p>
-          <p class="text-[12px] text-sand-500">Zeer vroeg stadium. Invasief, niet beschikbaar als behandeling.</p>
-        </div>
+        </details>
 
-        <div class="p-5 rounded-2xl bg-plum-50 border border-plum-100 reveal">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-serif text-[18px] font-normal text-plum-400">Stellate ganglion blokkade</h3>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap shrink-0">Experimenteel</span>
+        <details class="group border border-plum-100 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-plum-50 hover:bg-plum-100/50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-plum-400">Deep brain stimulation</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap">Experimenteel</span>
+              <svg class="w-4 h-4 text-plum-300 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-plum-100">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Een Oxford-studie (Chapman et al., 2024) toonde dat stimulatie van de motorthalamus het gevoel van luchthonger kan verminderen. Dit is de eerste aanwijzing dat luchthonger via neurale paden beïnvloed kan worden.
+            </p>
+            <p class="text-[12px] text-sand-500">Zeer vroeg stadium. Invasief, niet beschikbaar als behandeling.</p>
           </div>
-          <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
-            Een injectie in de sympathische zenuwknoop in de hals die het sympathische zenuwstelsel tijdelijk herstart. In een pilotstudie bij long COVID-patienten (n=17) rapporteerden alle deelnemers enige verbetering na de blokkade, en meldde 94% vooraf matige tot ernstige autonome disfunctie. Effect kan weken tot maanden aanhouden.
-          </p>
-          <p class="text-[12px] text-sand-500">Poliklinische procedure. Niet getest specifiek voor CHV. Klinisch bewijs bij dysautonomie groeit.</p>
-        </div>
+        </details>
+
+        <details class="group border border-plum-100 rounded-xl overflow-hidden reveal">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer bg-plum-50 hover:bg-plum-100/50 transition-colors list-none">
+            <span class="font-serif text-[17px] font-normal text-plum-400">Stellate ganglion blokkade</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/50 text-plum-300 whitespace-nowrap">Experimenteel</span>
+              <svg class="w-4 h-4 text-plum-300 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </summary>
+          <div class="px-5 py-5 border-t border-plum-100">
+            <p class="text-[14px] text-sand-600 leading-relaxed mb-2">
+              Een injectie in de sympathische zenuwknoop in de hals die het sympathische zenuwstelsel tijdelijk herstart. In een pilotstudie bij long COVID-patiënten (n=17) rapporteerden alle deelnemers enige verbetering na de blokkade, en meldde 94% vooraf matige tot ernstige autonome disfunctie. Effect kan weken tot maanden aanhouden.
+            </p>
+            <p class="text-[12px] text-sand-500">Poliklinische procedure. Niet getest specifiek voor CHV. Klinisch bewijs bij dysautonomie groeit.</p>
+          </div>
+        </details>
+
       </div>
 
       <!-- CHV in Belgie -->
@@ -240,7 +293,6 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         <p class="text-[15px] text-sand-600 mb-5 leading-relaxed">
           In België is chronische hyperventilatie als zelfstandige diagnose weinig gekend. Er bestaat geen patiëntenorganisatie en geen officieel zorgpad. Toch zijn er wegen om de juiste hulp te vinden.
         </p>
-
         <div class="grid md:grid-cols-2 gap-4">
           <div class="pl-4 border-l-2 border-sage-200">
             <div class="text-[13px] font-medium text-sand-700 mb-1">Via de huisarts</div>
@@ -248,13 +300,12 @@ import SurveyBanner from '../components/SurveyBanner.astro';
           </div>
           <div class="pl-4 border-l-2 border-sage-200">
             <div class="text-[13px] font-medium text-sand-700 mb-1">Kinesitherapeut</div>
-            <p class="text-[13px] text-sand-600 leading-relaxed">Ademhalingsretraining valt in België onder de kinesitherapie, niet de logopedie of psychologie. Zoek een kinesist met ervaring in ademhalingsproblematiek of chronische aandoeningen. Sommige kinesisten zijn specifiek gespecialiseerd in functionele ademstoornissen. Vraag bij je ziekenfonds na onder welke nomenclatuur ademhalingsretraining terugbetaald kan worden.</p>
+            <p class="text-[13px] text-sand-600 leading-relaxed">Ademhalingsretraining valt in België onder de kinesitherapie, niet de logopedie of psychologie. Zoek een kinesist met ervaring in ademhalingsproblematiek of chronische aandoeningen. Vraag bij je ziekenfonds na onder welke nomenclatuur ademhalingsretraining terugbetaald kan worden.</p>
           </div>
           <div class="pl-4 border-l-2 border-sage-200">
             <div class="text-[13px] font-medium text-sand-700 mb-1">Terugbetaling via de mutualiteit</div>
-            <p class="text-[13px] text-sand-600 leading-relaxed">Kinesitherapie op verwijzing van een arts is gedeeltelijk terugbetaalbaar via het RIZIV. Voor chronische ademhalingsproblemen kunnen aanvullende sessies aangevraagd worden. De concrete mogelijkheden verschillen per ziekenfonds en diagnose. Informeer je vooraf bij je eigen mutualiteit.</p>
+            <p class="text-[13px] text-sand-600 leading-relaxed">Kinesitherapie op verwijzing van een arts is gedeeltelijk terugbetaalbaar via het RIZIV. De concrete mogelijkheden verschillen per ziekenfonds en diagnose. Informeer je vooraf bij je eigen mutualiteit.</p>
           </div>
-
         </div>
       </div>
 
@@ -301,22 +352,21 @@ import SurveyBanner from '../components/SurveyBanner.astro';
           </li>
           <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
-              <div class="text-[14px] font-medium text-sand-700">Chapman TP, et al. (2024)</div>
-              <div class="text-[14px] text-sand-600 italic">Deep brain stimulation of the motor thalamus relieves experimentally induced air hunger</div>
-              <div class="text-[13px] text-sand-500">European Respiratory Journal, 64(6), 2401156</div>
-              <a href="https://doi.org/10.1183/13993003.01156-2024" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
-
-            </div>
-            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Experimenteel</span>
-          </li>
-          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
-            <div>
               <div class="text-[14px] font-medium text-sand-700">Norweg A, Oh C, DiMango A, et al. (2025)</div>
               <div class="text-[14px] text-sand-600 italic">Mind the Breath: Feasibility of capnography-assisted learned monitored (CALM) breathing for dyspnea treatment</div>
               <div class="text-[13px] text-sand-500">Journal of Cardiopulmonary Rehabilitation and Prevention, 45(2), 118-131</div>
               <a href="https://doi.org/10.1097/HCR.0000000000000939" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
             </div>
             <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Opkomend</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Chapman TP, et al. (2024)</div>
+              <div class="text-[14px] text-sand-600 italic">Deep brain stimulation of the motor thalamus relieves experimentally induced air hunger</div>
+              <div class="text-[13px] text-sand-500">European Respiratory Journal, 64(6), 2401156</div>
+              <a href="https://doi.org/10.1183/13993003.01156-2024" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-plum-50 text-plum-300 whitespace-nowrap">Experimenteel</span>
           </li>
           <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
@@ -330,7 +380,7 @@ import SurveyBanner from '../components/SurveyBanner.astro';
           <li class="py-4 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
               <div class="text-[14px] font-medium text-sand-700">Pharmacological Interventions Targeting Brainstem Respiratory Pattern Generators (2026)</div>
-              <div class="text-[14px] text-sand-600 italic">Onderzoeksnotitie: alpha-2 agonisten, neurosteroiden, LDN en orexine-antagonisten bij hersenstam-gemedieerde ademhalingsstoornissen</div>
+              <div class="text-[14px] text-sand-600 italic">Onderzoeksnotitie: alpha-2 agonisten, neurosteroïden, LDN en orexine-antagonisten bij hersenstam-gemedieerde ademhalingsstoornissen</div>
               <div class="text-[13px] text-sand-500">BreathWise Research, intern document</div>
               <span class="text-[11px] text-sand-500 italic">Niet peer-reviewed, mechanistische onderbouwing op basis van gepubliceerde bronnen</span>
             </div>
@@ -338,7 +388,6 @@ import SurveyBanner from '../components/SurveyBanner.astro';
           </li>
         </ul>
       </div>
-
 
     </div>
   </div>
