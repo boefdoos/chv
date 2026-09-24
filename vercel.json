@@ -1,0 +1,16 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "chronische-hyperventilatie.be"
+        }
+      ],
+      "destination": "https://www.chronische-hyperventilatie.be/$1",
+      "permanent": true
+    }
+  ]
+}

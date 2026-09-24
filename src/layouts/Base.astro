@@ -8,7 +8,9 @@ interface Props {
 
 const { title, description = 'Wetenschappelijk onderbouwde informatie over chronische hyperventilatie', activeNav = '', canonical = '' } = Astro.props;
 const siteUrl = 'https://www.chronische-hyperventilatie.be';
-const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+const rawPath = Astro.url.pathname;
+const normPath = rawPath.endsWith('/') ? rawPath : `${rawPath}/`;
+const pageUrl = `${siteUrl}${normPath}`;
 const fullTitle = title === 'Home' ? 'Chronische Hyperventilatie | Wetenschappelijk onderbouwde informatie' : `${title} | Chronische Hyperventilatie`;
 ---
 
