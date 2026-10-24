@@ -101,16 +101,16 @@ export default function NijmegenQuestionnaire() {
             {isElevated ? (
               <div className="space-y-3 text-[14px] text-sand-600 leading-relaxed">
                 <p>
-                  Een score boven 23 wijst op een <strong className="text-sand-700 font-medium">verhoogde kans op hyperventilatie</strong> als (mede-)oorzaak van je klachten.
+                  Een score boven 23 wijst op <strong className="text-sand-700 font-medium">functionele ademhalingsklachten</strong>. Een verstoord adempatroon, al dan niet met hyperventilatie, kan dan een rol spelen in je klachten. Ook stress en angst tellen mee in de score.
                 </p>
                 <p>
-                  Dit is een screening, geen diagnose. Een hoge score is een reden om dit met je huisarts te bespreken. Een capnografiemeting of arterieel bloedgas kan uitsluitsel geven.
+                  Dit is een screening, geen diagnose. Een hoge score is een reden om dit met je huisarts te bespreken. Een kinesitherapeut kan je adempatroon beoordelen, en een CO₂-meting toont of er ook sprake is van hyperventilatie.
                 </p>
               </div>
             ) : (
               <div className="space-y-3 text-[14px] text-sand-600 leading-relaxed">
                 <p>
-                  Een score van 23 of lager maakt hyperventilatie <strong className="text-sand-700 font-medium">minder waarschijnlijk</strong> als hoofdoorzaak, maar sluit het niet volledig uit.
+                  Een score van 23 of lager maakt functionele ademhalingsklachten <strong className="text-sand-700 font-medium">minder waarschijnlijk</strong>, maar sluit ze niet volledig uit.
                 </p>
                 <p>
                   Als je toch het gevoel hebt dat je klachten bij het beeld passen, is een gesprek met je huisarts alsnog zinvol.

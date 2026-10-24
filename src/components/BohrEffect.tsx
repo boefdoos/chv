@@ -145,7 +145,7 @@ export default function BohrEffect() {
         style={{ animation: 'bohrFade 0.35s ease both' }}
       >
         {isLaag
-          ? 'Te weinig CO₂: hemoglobine houdt de zuurstof vast. Je saturatie ziet er goed uit, maar je cellen krijgen te weinig.'
+          ? 'Te weinig CO₂: hemoglobine houdt de zuurstof vast. Je saturatie ziet er goed uit, maar je weefsels krijgen de zuurstof minder makkelijk.'
           : 'Genoeg CO₂ aanwezig: hemoglobine laat de zuurstof los. Levering aan de cellen verloopt normaal.'}
       </div>
 
