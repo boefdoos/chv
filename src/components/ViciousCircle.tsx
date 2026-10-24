@@ -1,6 +1,6 @@
 const steps = [
   { label: 'Te veel ademen', sub: 'CO₂ daalt' },
-  { label: 'Nieren passen aan', sub: 'Buffer verdwijnt' },
+  { label: 'Nieren passen aan', sub: 'Bicarbonaat daalt' },
   { label: 'Setpoint verschuift', sub: 'Laag wordt "normaal"' },
   { label: 'Alarm bij stijging', sub: '"Meer ademen!"' },
 ];
