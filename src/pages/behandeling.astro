@@ -24,7 +24,7 @@ import SurveyBanner from '../components/SurveyBanner.astro';
       <div class="bg-sage-50 rounded-2xl p-8 md:p-10 mb-12 relative overflow-hidden reveal">
         <div class="absolute -right-10 -top-10 w-[200px] h-[200px] rounded-full bg-sage-300/[0.08] animate-breathe"></div>
         <p class="font-serif text-[20px] leading-[1.7] text-sage-500 relative z-10">
-          Chronische hyperventilatie is behandelbaar. De meeste aanpakken richten zich op hetzelfde doel: je adempatroon herstellen zodat je CO₂-niveau weer normaliseert. Welke aanpak het beste werkt, verschilt per persoon.
+          Chronische hyperventilatie is behandelbaar. De meeste aanpakken richten zich op je adempatroon: trager, rustiger en minder met de borst ademen. Bij mensen met aangetoonde hypocapnie is een normaler CO₂-niveau een logisch doel, maar klachten kunnen ook verbeteren voordat de CO₂ meetbaar verandert. Welke aanpak het beste werkt, verschilt per persoon.
         </p>
       </div>
 
@@ -41,17 +41,37 @@ import SurveyBanner from '../components/SurveyBanner.astro';
       <div class="p-6 rounded-2xl bg-sand-50 border border-sand-300 mb-12 reveal">
         <div class="flex items-start justify-between gap-4 mb-3">
           <h3 class="font-serif text-[20px] font-normal">Ademhalingsretraining</h3>
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap shrink-0">Sterk bewijs</span>
+          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap shrink-0">Matig bewijs (astma)</span>
         </div>
         <p class="text-[15px] text-sand-600 mb-2 leading-relaxed">
-          De eerste keus. Een therapeut leert je een rustiger adempatroon aan: langzamer, via het middenrif, door de neus. Het doel is niet ontspanning maar het herstellen van je CO₂-balans.
+          De eerste keus. Een therapeut leert je een rustiger adempatroon aan: langzamer, via het middenrif, door de neus. Het doel is een trager en rustiger adempatroon. Bij aangetoonde hypocapnie hoort daar ook het herstellen van je CO₂-balans bij.
+        </p>
+        <p class="text-[13px] text-sand-500 mb-2">
+          BREATHE-trial (Bruton et al., 2018): betere levenskwaliteit na 12 maanden bij mensen met onvoldoende gecontroleerde astma, n=655. Een systematische review bij astma (2026) bevestigt dat voordeel tegenover gewone zorg, maar 9 van de 12 gerandomiseerde studies hadden een hoog risico op bias en tegenover andere actieve behandelingen waren de resultaten gemengd.
         </p>
         <p class="text-[13px] text-sand-500">
-          BREATHE-trial (Thomas et al., 2017): verbeterde kwaliteit van leven tot 12 maanden, n=655 (astma + hyperventilatieklachten).
+          Bij hyperventilatiesyndroom zonder astma is het bewijs beperkt. In een Franse studie (n=42) daalde de Nijmegen-score na zes sessies kinesitherapie met uitleg en ademoefeningen gemiddeld met 11,6 punten, en dat bleef zo na drie maanden. Er was wel geen controlegroep, dus een deel van de verbetering kan ook met tijd of verwachting te maken hebben.
         </p>
         <div class="mt-3 pt-3 border-t border-sand-300 text-[12px] text-sand-500">
           Aangeboden door: kinesitherapeuten, fysiotherapeuten, logopedisten
         </div>
+      </div>
+
+      <!-- Beter zonder CO2-verandering -->
+      <div class="p-6 rounded-2xl bg-white border border-sand-200 mb-12 reveal">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-serif text-[20px] font-normal">Beter voelen, ook als de CO₂ nog niet verandert</h3>
+          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap shrink-0">Beperkt bewijs</span>
+        </div>
+        <p class="text-[15px] text-sand-600 mb-2 leading-relaxed">
+          Ademtraining kan klachten verlichten, ook als de CO₂-waarde zelf nog niet meetbaar verandert. In een studie bij long COVID verbeterden het adempatroon en de klachten bij rechtop staan, terwijl de CO₂ bij de controlemeting gelijk bleef. In Leuven zag men in 1996 al iets gelijkaardigs: de klachten verbeterden vooral samen met een tragere ademhaling, niet met een verandering van de uitgeademde CO₂.
+        </p>
+        <p class="text-[15px] text-sand-600 mb-2 leading-relaxed">
+          Een normale CO₂-waarde is dus geen voorwaarde om je beter te voelen, en een onveranderde waarde betekent niet dat de training niet werkt. Waarom dat zo is, is nog niet duidelijk: mogelijk speelt het ademritme zelf een rol, of verandert vooral hoe je de klachten ervaart.
+        </p>
+        <p class="text-[12px] text-sand-500">
+          Beide studies zijn klein en zonder controlegroep. De long COVID-studie gaat over mensen met klachten bij rechtop staan na een virusinfectie; dat is niet zomaar over te dragen op elke vorm van chronische hyperventilatie.
+        </p>
       </div>
 
       <!-- Gerichte methoden -->
@@ -338,12 +358,48 @@ import SurveyBanner from '../components/SurveyBanner.astro';
         <ul class="list-none">
           <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
-              <div class="text-[14px] font-medium text-sand-700">Thomas M, Bruton A, Little P, et al. (2017)</div>
+              <div class="text-[14px] font-medium text-sand-700">Bruton A, Lee A, Yardley L, et al. (2018)</div>
               <div class="text-[14px] text-sand-600 italic">Physiotherapy breathing retraining for asthma: a randomised controlled trial</div>
-              <div class="text-[13px] text-sand-500">The Lancet Respiratory Medicine, 5(1), 19-28</div>
+              <div class="text-[13px] text-sand-500">The Lancet Respiratory Medicine, 6(1), 19-28</div>
               <a href="https://doi.org/10.1016/S2213-2600(17)30474-5" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
             </div>
-            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sage-50 text-sage-400 whitespace-nowrap">Sterk</span>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Crespo-Lessmann A, Vélez-Segovia E, Paz L, et al. (2026)</div>
+              <div class="text-[14px] text-sand-600 italic">Breathing Exercises as Adjunct Therapy in Adult Asthma: A Systematic Review</div>
+              <div class="text-[13px] text-sand-500">F1000Research, 15, 996</div>
+              <a href="https://doi.org/10.12688/f1000research.180230.2" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-terra-50 text-terra-400 whitespace-nowrap">Matig</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Beaumont M, Selleron B, Passard G, et al. (2025)</div>
+              <div class="text-[14px] text-sand-600 italic">Physiotherapy Education and Breathing Retraining for Patients With Hyperventilation Syndrome: An Observational Study</div>
+              <div class="text-[13px] text-sand-500">Physiotherapy Canada, 78(2), 190-200</div>
+              <a href="https://doi.org/10.3138/ptc-2024-0066" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap">Beperkt</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">O'Brien S, Butler TJ, Maher E, et al. (2026)</div>
+              <div class="text-[14px] text-sand-600 italic">Dysautonomia and Postural Orthostatic Syndrome of Hypocapnia in Long COVID Syndrome</div>
+              <div class="text-[13px] text-sand-500">Journal of Clinical Medicine, 15(18), 6970</div>
+              <a href="https://doi.org/10.3390/jcm15186970" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap">Beperkt</span>
+          </li>
+          <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
+            <div>
+              <div class="text-[14px] font-medium text-sand-700">Han JN, Stegen K, De Valck C, et al. (1996)</div>
+              <div class="text-[14px] text-sand-600 italic">Influence of breathing therapy on complaints, anxiety and breathing pattern in patients with hyperventilation syndrome and anxiety disorders</div>
+              <div class="text-[13px] text-sand-500">Journal of Psychosomatic Research, 41(5), 481-493</div>
+              <a href="https://doi.org/10.1016/s0022-3999(96)00220-6" target="_blank" class="inline-flex items-center gap-1 text-[12px] text-sage-300 no-underline mt-1 hover:underline">DOI &#8599;</a>
+            </div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-sand-100 text-sand-500 whitespace-nowrap">Beperkt</span>
           </li>
           <li class="py-4 border-b border-sand-300 grid md:grid-cols-[1fr_auto] gap-4 items-baseline">
             <div>
