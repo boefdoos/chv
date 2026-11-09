@@ -6,9 +6,9 @@ interface Props {
 const { current } = Astro.props;
 
 const pages = [
-  { slug: 'ademhaling', label: 'Hoe ademhaling werkt', href: '/wat-is-het/ademhaling' },
-  { slug: 'wat-gaat-er-mis', label: 'Wat gaat er mis?', href: '/wat-is-het/wat-gaat-er-mis' },
-  { slug: 'diagnose', label: 'Diagnose', href: '/diagnose' },
+  { slug: 'ademhaling', label: 'Hoe ademhaling werkt', href: '/wat-is-het/ademhaling/' },
+  { slug: 'wat-gaat-er-mis', label: 'Wat gaat er mis?', href: '/wat-is-het/wat-gaat-er-mis/' },
+  { slug: 'diagnose', label: 'Diagnose', href: '/diagnose/' },
 ];
 
 const currentIndex = pages.findIndex(p => p.slug === current);
