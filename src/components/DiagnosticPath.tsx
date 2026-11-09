@@ -1,9 +1,9 @@
 const steps = [
-  { specialist: 'Huisarts',   test: 'Bloedonderzoek, urinetest',  color: '#c8bdb0' },
-  { specialist: 'Cardioloog', test: 'ECG, echocardiogram',         color: '#c8bdb0' },
-  { specialist: 'Longarts',   test: 'Spirometrie, longfunctie',    color: '#c8bdb0' },
-  { specialist: 'Maag-darm',  test: 'Gastroscopie, bloedtest',     color: '#c8bdb0' },
-  { specialist: 'Neuroloog',  test: 'Neurologisch onderzoek',      color: '#c8bdb0' },
+  { specialist: 'Huisarts',   test: 'Bloedonderzoek, urinetest',  color: '#c2cac6' },
+  { specialist: 'Cardioloog', test: 'ECG, echocardiogram',         color: '#c2cac6' },
+  { specialist: 'Longarts',   test: 'Spirometrie, longfunctie',    color: '#c2cac6' },
+  { specialist: 'Maag-darm',  test: 'Gastroscopie, bloedtest',     color: '#c2cac6' },
+  { specialist: 'Neuroloog',  test: 'Neurologisch onderzoek',      color: '#c2cac6' },
 ];
 
 export default function DiagnosticPath() {

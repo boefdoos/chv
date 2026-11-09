@@ -14,35 +14,35 @@ export default function RecoveryCurve() {
         style={{ fontFamily: 'inherit' }}
       >
         {/* Achtergrond */}
-        <rect x="30" y="30" width="420" height="200" rx="6" fill="#faf8f5" />
+        <rect x="30" y="30" width="420" height="200" rx="6" fill="#f9fbfa" />
 
         {/* Rasterlijnen */}
         {[0.25, 0.5, 0.75].map((f, i) => (
           <line key={i}
             x1="30" y1={30 + f * 200}
             x2="450" y2={30 + f * 200}
-            stroke="#e8e0d8" strokeWidth="1" strokeDasharray="3 3"
+            stroke="#e1e7e4" strokeWidth="1" strokeDasharray="3 3"
           />
         ))}
 
         {/* Assen */}
-        <line x1="40" y1="230" x2="450" y2="230" stroke="#c8bdb0" strokeWidth="1.5" />
-        <line x1="40" y1="30" x2="40" y2="230" stroke="#c8bdb0" strokeWidth="1.5" />
+        <line x1="40" y1="230" x2="450" y2="230" stroke="#c2cac6" strokeWidth="1.5" />
+        <line x1="40" y1="30" x2="40" y2="230" stroke="#c2cac6" strokeWidth="1.5" />
 
         {/* As-labels */}
-        <text x="240" y="258" fontSize="11" textAnchor="middle" fill="#a09080">tijd</text>
-        <text x="14" y="134" fontSize="11" textAnchor="middle" fill="#a09080"
+        <text x="240" y="258" fontSize="11" textAnchor="middle" fill="#8f9893">tijd</text>
+        <text x="14" y="134" fontSize="11" textAnchor="middle" fill="#8f9893"
           transform="rotate(-90, 14, 134)">beter</text>
 
         {/* Verwachte lijn (gestippeld, lichtgrijs) */}
         <path d={expected}
           fill="none"
-          stroke="#c8bdb0"
+          stroke="#c2cac6"
           strokeWidth="2"
           strokeDasharray="6 4"
         />
         {/* Label verwacht */}
-        <text x="400" y="34" fontSize="10.5" fill="#b0a090" textAnchor="end">verwacht</text>
+        <text x="400" y="34" fontSize="10.5" fill="#a3aca7" textAnchor="end">verwacht</text>
 
         {/* Werkelijke lijn */}
         <path d={actual}
@@ -76,7 +76,7 @@ export default function RecoveryCurve() {
       <div className="flex gap-6 justify-center mt-2">
         <div className="flex items-center gap-2">
           <svg width="24" height="10" viewBox="0 0 24 10">
-            <line x1="0" y1="5" x2="24" y2="5" stroke="#c8bdb0" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="0" y1="5" x2="24" y2="5" stroke="#c2cac6" strokeWidth="2" strokeDasharray="5 3" />
           </svg>
           <span className="text-[11px] text-sand-500">wat je hoopt</span>
         </div>

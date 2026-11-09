@@ -61,9 +61,9 @@ export default function BreathingCycle() {
                 {i < 2 && (
                   <g>
                     <line x1={cx + 36} y1={cy} x2={cx + 137} y2={cy}
-                      stroke="#c9b99a" strokeWidth="1.2" />
+                      stroke="#b5bfba" strokeWidth="1.2" />
                     <path d={`M${cx + 132} ${cy - 4}L${cx + 138} ${cy}L${cx + 132} ${cy + 4}`}
-                      fill="none" stroke="#c9b99a" strokeWidth="1.2"
+                      fill="none" stroke="#b5bfba" strokeWidth="1.2"
                       strokeLinecap="round" strokeLinejoin="round" />
                   </g>
                 )}
@@ -107,8 +107,8 @@ export default function BreathingCycle() {
                 {i < 2 && (
                   <div style={{ width: 52, display: 'flex', justifyContent: 'center', padding: '2px 0' }}>
                     <svg width="6" height="20" viewBox="0 0 6 20">
-                      <line x1="3" y1="0" x2="3" y2="14" stroke="#c9b99a" strokeWidth="1.2" />
-                      <path d="M1 12L3 16L5 12" fill="none" stroke="#c9b99a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      <line x1="3" y1="0" x2="3" y2="14" stroke="#b5bfba" strokeWidth="1.2" />
+                      <path d="M1 12L3 16L5 12" fill="none" stroke="#b5bfba" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                 )}

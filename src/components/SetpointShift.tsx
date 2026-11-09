@@ -76,23 +76,23 @@ export default function SetpointShift() {
         >meer ademen!</text>
 
         {/* As */}
-        <line x1={scaleX} y1={99} x2={scaleX + scaleW} y2={99} stroke="#c8bdb0" strokeWidth="1.5" />
+        <line x1={scaleX} y1={99} x2={scaleX + scaleW} y2={99} stroke="#c2cac6" strokeWidth="1.5" />
 
         {/* Tikken + labels */}
         {[20, 25, 30, 35, 40, 45, 50, 55].map((v) => (
           <g key={v}>
-            <line x1={toX(v)} y1={95} x2={toX(v)} y2={103} stroke="#c8bdb0" strokeWidth="1" />
-            <text x={toX(v)} y={116} fontSize="10.5" textAnchor="middle" fill="#a09080">{v}</text>
+            <line x1={toX(v)} y1={95} x2={toX(v)} y2={103} stroke="#c2cac6" strokeWidth="1" />
+            <text x={toX(v)} y={116} fontSize="10.5" textAnchor="middle" fill="#8f9893">{v}</text>
           </g>
         ))}
-        <text x={scaleX + scaleW / 2} y={130} fontSize="11" textAnchor="middle" fill="#a09080">
+        <text x={scaleX + scaleW / 2} y={130} fontSize="11" textAnchor="middle" fill="#8f9893">
           CO₂ in bloed (mmHg)
         </text>
 
         {/* Setpoint-streep */}
         <line
           x1={setpointX} y1={44} x2={setpointX} y2={103}
-          stroke="#7a6a5a" strokeWidth="2" strokeDasharray="4 2"
+          stroke="#66706b" strokeWidth="2" strokeDasharray="4 2"
           style={{ transition: 'x1 0.7s cubic-bezier(0.34,1.1,0.64,1), x2 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         <rect
@@ -101,7 +101,7 @@ export default function SetpointShift() {
           style={{ transition: 'x 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         />
         <text
-          x={setpointX} y={35} fontSize="11.5" textAnchor="middle" fill="#7a6a5a" fontWeight="600"
+          x={setpointX} y={35} fontSize="11.5" textAnchor="middle" fill="#66706b" fontWeight="600"
           style={{ transition: 'x 0.7s cubic-bezier(0.34,1.1,0.64,1)' }}
         >setpoint: {setpointVal} mmHg</text>
 

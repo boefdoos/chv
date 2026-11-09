@@ -97,13 +97,13 @@ export default function BohrEffect() {
 
         {/* Weefsel-blok */}
         <rect x="322" y="4" width="168" height="108" rx="10"
-          fill={isLaag ? '#f5f0eb' : '#eef4f0'}
-          stroke={isLaag ? '#d8cfc8' : '#b0d8bc'}
+          fill={isLaag ? '#f1f4f2' : '#eef4f0'}
+          stroke={isLaag ? '#d2d9d5' : '#b0d8bc'}
           strokeWidth="1.5"
           style={{ transition: 'fill 0.5s, stroke 0.5s' }}
         />
         <text x="406" y="30" fontSize="13" textAnchor="middle"
-          fill={isLaag ? '#b0a090' : '#5a9870'} fontWeight="600"
+          fill={isLaag ? '#a3aca7' : '#5a9870'} fontWeight="600"
           style={{ transition: 'fill 0.4s' }}>weefsel / cel</text>
         <text x="406" y="50" fontSize="12" textAnchor="middle"
           fill={isLaag ? '#c0b0a0' : '#7aaa8a'}
@@ -126,7 +126,7 @@ export default function BohrEffect() {
         {[{ x: 358, y: 85 }, { x: 406, y: 85 }, { x: 454, y: 85 }].map((p, i) => (
           <g key={`o2weefsel-empty-${i}`}
             style={{ opacity: isLaag ? 1 : 0, transition: `opacity 0.35s ease ${i * 60}ms` }}>
-            <circle cx={p.x} cy={p.y} r="11" fill="none" stroke="#d8cfc8" strokeWidth="1.5" strokeDasharray="3 2" />
+            <circle cx={p.x} cy={p.y} r="11" fill="none" stroke="#d2d9d5" strokeWidth="1.5" strokeDasharray="3 2" />
           </g>
         ))}
 
